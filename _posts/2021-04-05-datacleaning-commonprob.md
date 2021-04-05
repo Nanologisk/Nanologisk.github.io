@@ -257,6 +257,7 @@ Take a look at the output. Out of the cleanliness, safety and satisfaction colum
 Next, find the column with different values using `set()` and `difference`:
 - Create a set out of the `cleanliness` column in `airlines`-dataset using `set()` and find the inconsistent category by finding the **difference** in the `cleanliness` column of `categories`-dataset.
 - Find rows of `airlines` with a `cleanliness` value not in `categories` and print the output.
+- Print the rows with the consistent categories of `cleanliness` only.
 
 ```py
 # Find the cleanliness category in airlines not in categories
@@ -267,6 +268,9 @@ cat_clean_rows = airlines['cleanliness'].isin(cat_clean)
 
 # Print rows with inconsistent category
 print(airlines[cat_clean_rows])
+
+# Print rows with consistent categories only
+print(airlines[~cat_clean_rows])
 ```
 
 And this gives the following output when exploring the data:
@@ -321,15 +325,54 @@ In [4]: print(airlines[cat_clean_rows])
 100  Somewhat satisfied  
 ```
 
+### Categories of errors
+To address common problems affecting categorical variables in the data includes white spaces and inconsistencies in the categories, and the problem of creating new categories and mapping existing ones to new ones.
 
+First, we can take a look at the values for a column using:
+- `df['colname'].value_counts()
+- or perform value counts on DataFrame: `df['col2'].groupby(df['colname']).count()`
 
+This will give an overview of numbers of values/categories for the variable. Than we can address the problems by:
 
+**White spaces and inconsistencies**:
+- `.str.strip()`: removes all spaces before or after the column name. Strips all spaces.
+- `.str.upper()`: Capitalize all labels so that every label is spelled with capital letters.
+- `.str.lower()`: Lowercase, make all labels spelled with lowercase
 
+```
+# Capitalize
+df['col'] = df['col'].str.upper()
+df['col'].value_counts()
+```
 
+**Creating or remapping categories**:
+- .replace():
+- pandas.cut(): 
+- pandas.qcut(): 
 
+Collapsing data into categories: Create categories out of data - `income_group` column from `income` column
 
+```py
+# Using qcut()
+import pandas as pd
+group_names = ['0-200K', '200K-500K', '500K+']
+demographics['income_group'] = pd.qcut(demographics['household_income'], q = 3,                                        
+                                                   labels = group_names)                                                 
+ # Print income_group column
+ demographics[['income_group', 'household_income']]
+ ```
+Another method: 
 
+```py
+Using cut() - create category ranges and names
+ranges = [0,200000,500000,np.inf]
+group_names = ['0-200K', '200K-500K', '500K+']
 
+# Create income group column
+demographics['income_group'] = pd.cut(demographics['household_income'], bins=ranges,
+                                                                        labels=group_names)
+demographics[['income_group', 'household_income']]
+```
 
 
 
