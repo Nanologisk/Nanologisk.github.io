@@ -9,7 +9,7 @@ aside:
   toc: true
 ---
 
-Based on DataCamp.
+From DataCamp.
 
 <!--more-->
 ## 1. Common data Problems
@@ -200,10 +200,52 @@ Different types of constraints:
 - 不同表格合并资格问题
 
 Membership constraints: when recording content that should not exist. F. eks. when recording blood type, misspell the type from A+ to Z+.
+Other examples:
+- A `has_loan` column with the value 12.
+- A `day_of_week` column with the value "Satermonday".
+- A `month` column with the value 14. 
+- A `GPA` column containing a "Z grade".
 
+### Finding consistency
 
+In this exercise and throughout this chapter, we will be working with the `airlines` DataFrame which contains survey responses on the San Francisco Airport from airline customers.
 
+The DataFrame contains flight metadata such as the airline, the destination, waiting times as well as answers to key questions regarding cleanliness, safety, and satisfaction. Another DataFrame named `categories` was created, containing all correct possible values for the survey columns.
 
+In this exercise, we will use both of these DataFrames to find survey answers with inconsistent values, and drop them, effectively performing an outer and inner join on both these DataFrames as seen in the video exercise. The `pandas` package has been imported as `pd`, and the `airlines` and `categories` DataFrames are in your environment.
+
+- Print the `categories` DataFrame and take a close look at all possible correct categories of the survey columns.
+- Print the unique values of the survey columns in `airlines` using the `.unique()` method.
+
+```py
+# Print categories DataFrame
+print(categories)
+
+# Print unique values of survey columns in airlines
+print('Cleanliness: ', airlines['cleanliness'].unique(), "\n")
+print('Safety: ', airlines["safety"].unique(), "\n")
+print('Satisfaction: ', airlines['satisfaction'].unique(), "\n")
+```
+
+The output looks like this:
+```
+<script.py> output:
+          cleanliness           safety          satisfaction
+    0           Clean          Neutral        Very satisfied
+    1         Average        Very safe               Neutral
+    2  Somewhat clean    Somewhat safe    Somewhat satisfied
+    3  Somewhat dirty      Very unsafe  Somewhat unsatisfied
+    4           Dirty  Somewhat unsafe      Very unsatisfied
+    Cleanliness:  [Clean, Average, Unacceptable, Somewhat clean, Somewhat dirty, Dirty]
+    Categories (6, object): [Clean, Average, Unacceptable, Somewhat clean, Somewhat dirty, Dirty] 
+    
+    Safety:  [Neutral, Very safe, Somewhat safe, Very unsafe, Somewhat unsafe]
+    Categories (5, object): [Neutral, Very safe, Somewhat safe, Very unsafe, Somewhat unsafe] 
+    
+    Satisfaction:  [Very satisfied, Neutral, Somewhat satisfied, Somewhat unsatisfied, Very unsatisfied]
+    Categories (5, object): [Very satisfied, Neutral, Somewhat satisfied, Somewhat unsatisfied,
+                             Very unsatisfied] 
+      ```
 
 
 
