@@ -4,7 +4,7 @@ title: Cleaning data in Python
 key: 20200610
 tags: Python, Data-science
 pageview: false
-modify_date: 2020-06-11
+modify_date: 2021-04-05
 aside:
   toc: true
 ---
@@ -344,6 +344,8 @@ This will give an overview of numbers of values/categories for the variable. Tha
 df['col'] = df['col'].str.upper()
 df['col'].value_counts()
 ```
+**Collapsing all of the state**
+![image](https://user-images.githubusercontent.com/57987646/113615218-ded6c080-9653-11eb-8a5a-a3eef6d3a975.png)
 
 **Creating or remapping categories**:
 - `pandas.qcut()`: define labels, cut into *n* groups and bind with labels.
@@ -459,6 +461,98 @@ mappings = {'Monday':'weekday', 'Tuesday':'weekday', 'Wednesday': 'weekday',
 
 airlines['day_week'] = airlines['day'].replace(mappings)
 ```
+
+### Cleaning text data
+
+```py
+# Replace "+" with "00"
+phones["Phone number"] = phones["Phone number"].str.replace("+", "00")
+
+# Replace "-" with nothing
+phones["Phone number"] = phones["Phone number"].str.replace("-", "")
+
+# Replace phone numbers with lower than 10 digits to NaN
+digits = phones['Phone number'].str.len()
+phones.loc[digits < 10, "Phone number"] = np.nan
+
+# Find length of each row in Phone number column
+sanity_check = phone['Phone number'].str.len()
+
+# Assert minmum phone number length is 10
+assert sanity_check.min() >= 10
+
+# Assert all numbers do not have "+" or "-"
+assert phone['Phone number'].str.contains("+|-").any() == False
+
+# Remember,assert returns nothing if the condition pass.
+
+# Replace letters with nothing
+phones['Phone number'] = phones['Phone number'].str.replace(r'\D+', '')
+```
+
+### Removing titles and taking names
+
+While collecting survey respondent metadata in the `airlines` DataFrame, the full name of respondents was saved in the `full_name` column. However upon closer inspection, you found that a lot of the different names are prefixed by honorifics such as "Dr.", "Mr.", "Ms." and "Miss".
+
+Your ultimate objective is to create two new columns named `first_name` and `last_name`, containing the first and last names of respondents respectively. Before doing so however, you need to remove honorifics.
+
+The `airlines` DataFrame is in your environment, alongside `pandas` as `pd`.
+- Remove "Dr.", "Mr.", "Miss" and "Ms." from `full_name` by replacing them with an empty string "" in that order.
+- Run the `assert` statement using `.str.contains()` that tests whether full_name still contains any of the honorifics.
+
+```py
+# Replace "Dr." with empty string ""
+airlines['full_name'] = airlines['full_name'].str.replace("Dr.","")
+
+# Replace "Mr." with empty string ""
+airlines['full_name'] = airlines['full_name'].str.replace("Mr.","")
+
+# Replace "Miss" with empty string ""
+airlines['full_name'] = airlines["full_name"].str.replace("Miss","")
+
+# Replace "Ms." with empty string ""
+airlines['full_name'] = airlines['full_name'].str.replace('Ms.',"")
+
+# Assert that full_name has no honorifics
+assert airlines['full_name'].str.contains('Ms.|Mr.|Miss|Dr.').any() == False
+```
+
+### Keeping it descriptive
+
+To further understand travelers' experiences in the San Francisco Airport, the quality assurance department sent out a qualitative questionnaire to all travelers who gave the airport the worst score on all possible categories. The objective behind this questionnaire is to identify common patterns in what travelers are saying about the airport.
+
+Their response is stored in the `survey_response` column. Upon a closer look, you realized a few of the answers gave the shortest possible character amount without much substance. In this exercise, you will isolate the responses with a character count higher than 40 , and make sure your new DataFrame contains responses with 40 characters or more using an `assert` statement.
+
+The `airlines` DataFrame is in your environment, and `pandas` is imported as `pd`.
+
+- Using the `airlines` DataFrame, store the length of each instance in the `survey_response` column in `resp_length` by using `.str.len()`.
+- Isolate the rows of `airlines` with `resp_length` higher than `40`.
+- Assert that the smallest survey response length in `airlines_survey` is now bigger than 40.
+
+```py
+# Store length of each row in survey_response column
+resp_length =airlines['survey_response'].str.len()
+
+# Find rows in airlines where resp_length > 40
+airlines_survey = airlines[resp_length > 40]
+
+# Assert minimum survey_response length is > 40
+assert airlines_survey['survey_response'].str.len().min() > 40
+
+# Print new survey_response column
+print(airlines_survey['survey_response'])
+```
+
+## Advanced data problems
+
+### Uniformity
+
+
+
+
+
+
+
 
 
 
