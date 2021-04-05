@@ -547,7 +547,11 @@ print(airlines_survey['survey_response'])
 
 ### Uniformity
 
-
+Column |  Unit
+Temperature | 32°C is also 89.6°F
+Weight | 70 Kg is also 11 st.
+Date | 26-11-2019 is also 26, November, 2019
+Money | 100$ is also 10763.90¥
 
 
 
