@@ -543,7 +543,7 @@ assert airlines_survey['survey_response'].str.len().min() > 40
 print(airlines_survey['survey_response'])
 ```
 
-## Advanced data problems
+## 3. Advanced data problems
 
 ### Uniformity
 
