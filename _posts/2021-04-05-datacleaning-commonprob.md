@@ -123,10 +123,10 @@ Hadrien	| Lacroix |	450	| 0
 
 Choose the correct usage of `.duplicated()` below:
 
-- `loans.duplicated()`. Because the default method returns both complete and incomplete duplicates. [Wrong](red)
-- `loans.duplicated(subset = 'first_name')`. Because constraining the duplicate rows to the first name lets me find incomplete duplicates as well.[Wrong](red)
-- `loans.duplicated(subset = ['first_name', 'last_name'], keep = False)`. Because subsetting on consumer metadata and not discarding any duplicate returns all duplicated rows. [Right](blue)
-- `loans.duplicated(subset = ['first_name', 'last_name'], keep = 'first')`. Because this drops all duplicates.[Wrong](red)
+- `loans.duplicated()`. Because the default method returns both complete and incomplete duplicates. [Wrong](red) :x:
+- `loans.duplicated(subset = 'first_name')`. Because constraining the duplicate rows to the first name lets me find incomplete duplicates as well. [Wrong](red) :x:
+- `loans.duplicated(subset = ['first_name', 'last_name'], keep = False)`. Because subsetting on consumer metadata and not discarding any duplicate returns all duplicated rows. [Right](blue) :white_check_mark:
+- `loans.duplicated(subset = ['first_name', 'last_name'], keep = 'first')`. Because this drops all duplicates. [Wrong](red) :x:
   
 ### Fiding duplicatess
 A new update to the data pipeline feeding into `ride_sharing` has added the `ride_id` column, which represents a unique identifier for each ride.
