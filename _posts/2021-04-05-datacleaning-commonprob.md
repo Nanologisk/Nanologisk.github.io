@@ -249,12 +249,77 @@ The output looks like this:
 ```      
 
 Take a look at the output. Out of the cleanliness, safety and satisfaction columns, which one has an inconsistent category and what is it?
-- `cleanliness` because it has an `Unacceptable` category.
-- `cleanliness` because it has a `Terribly dirty` category.
-- `satisfaction` because it has a `Very satisfied` category.
-- `safety` because it has a `Neutral` category.
+- `cleanliness` because it has an `Unacceptable` category. [Right](blue) :white_check_mark:
+- `cleanliness` because it has a `Terribly dirty` category.  [Wrong](red) :x:
+- `satisfaction` because it has a `Very satisfied` category.  [Wrong](red) :x:
+- `safety` because it has a `Neutral` category.  [Wrong](red) :x:
 
+Next, find the column with different values using `set()` and `difference`:
+- Create a set out of the `cleanliness` column in `airlines`-dataset using `set()` and find the inconsistent category by finding the **difference** in the `cleanliness` column of `categories`-dataset.
+- Find rows of `airlines` with a `cleanliness` value not in `categories` and print the output.
 
+```py
+# Find the cleanliness category in airlines not in categories
+cat_clean = set(airlines['cleanliness']).difference(categories['cleanliness'])
+
+# Find rows with that category
+cat_clean_rows = airlines['cleanliness'].isin(cat_clean)
+
+# Print rows with inconsistent category
+print(airlines[cat_clean_rows])
+```
+
+And this gives the following output when exploring the data:
+
+```
+In [1]: categories
+Out[1]:
+      cleanliness           safety          satisfaction
+0           Clean          Neutral        Very satisfied
+1         Average        Very safe               Neutral
+2  Somewhat clean    Somewhat safe    Somewhat satisfied
+3  Somewhat dirty      Very unsafe  Somewhat unsatisfied
+4           Dirty  Somewhat unsafe      Very unsatisfied
+
+cat_clean = set(airlines['cleanliness']).difference(categories['cleanliness'])
+
+In [2]: cat_clean
+Out[2]:
+{'Unacceptable'}
+
+cat_clean_rows = airlines['cleanliness'].isin(cat_clean)
+
+In [3]: cat_clean_rows
+Out[3]:
+0       False
+1       False
+2       False
+3       False
+4        True
+        ...  
+2804    False
+2805    False
+2806    False
+2807    False
+2808    False
+Name: cleanliness, Length: 2477, dtype: bool
+
+In [4]: print(airlines[cat_clean_rows])
+       id        day           airline  destination  dest_region dest_size  \
+4    2992  Wednesday          AMERICAN        MIAMI      East US       Hub   
+18   2913     Friday  TURKISH AIRLINES     ISTANBUL  Middle East       Hub   
+100  2321  Wednesday         SOUTHWEST  LOS ANGELES      West US       Hub   
+
+    boarding_area   dept_time  wait_min   cleanliness         safety  \
+4     Gates 50-59  2018-12-31     559.0  Unacceptable      Very safe   
+18   Gates 91-102  2018-12-31     225.0  Unacceptable      Very safe   
+100   Gates 20-39  2018-12-31     130.0  Unacceptable  Somewhat safe   
+
+           satisfaction  
+4    Somewhat satisfied  
+18   Somewhat satisfied  
+100  Somewhat satisfied  
+```
 
 
 
