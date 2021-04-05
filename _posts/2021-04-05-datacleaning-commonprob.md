@@ -339,16 +339,16 @@ This will give an overview of numbers of values/categories for the variable. Tha
 - `.str.upper()`: Capitalize all labels so that every label is spelled with capital letters.
 - `.str.lower()`: Lowercase, make all labels spelled with lowercase
 
-```
+```py
 # Capitalize
 df['col'] = df['col'].str.upper()
 df['col'].value_counts()
 ```
 
 **Creating or remapping categories**:
-- .replace():
-- pandas.cut(): 
-- pandas.qcut(): 
+- `pandas.qcut()`: define labels, cut into *n* groups and bind with labels.
+- `pandas.cut()`: difine labels and thredsholds for cutting, than bind the groups with labels.
+- `.replace()`: Group values to fewer values. First create a mapping dictionary, so `.replace(mapping)`.
 
 Collapsing data into categories: Create categories out of data - `income_group` column from `income` column
 
@@ -357,14 +357,14 @@ Collapsing data into categories: Create categories out of data - `income_group` 
 import pandas as pd
 group_names = ['0-200K', '200K-500K', '500K+']
 demographics['income_group'] = pd.qcut(demographics['household_income'], q = 3,                                        
-                                                   labels = group_names)                                                 
+                                                                         labels = group_names)                                                 
  # Print income_group column
  demographics[['income_group', 'household_income']]
  ```
-Another method: 
+The `pandas.qcut()` method might not be precise enought. Another method which is much better: 
 
 ```py
-Using cut() - create category ranges and names
+# Using cut() - create category ranges and names
 ranges = [0,200000,500000,np.inf]
 group_names = ['0-200K', '200K-500K', '500K+']
 
@@ -373,6 +373,26 @@ demographics['income_group'] = pd.cut(demographics['household_income'], bins=ran
                                                                         labels=group_names)
 demographics[['income_group', 'household_income']]
 ```
+
+Map categories to fewer ones: reducing categories in categorical column.
+
+operating_system columnis: 'Microsoft', 'MacOS', 'IOS', 'Android', 'Linux'
+
+operating_system column should become: 'DesktopOS', 'MobileOS'
+
+```py
+# Create mapping dictionary and replace
+mapping = {'Microsoft':'DesktopOS', 
+           'MacOS':'DesktopOS', 
+           'Linux':'DesktopOS',
+           'IOS':'MobileOS', 
+           'Android':'MobileOS'}
+devices['operating_system'] = devices['operating_system'].replace(mapping)
+devices['operating_system'].unique()
+```
+
+This returns: ```array(['DesktopOS', 'MobileOS'], dtype=object)```
+
 
 
 
