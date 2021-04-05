@@ -2,7 +2,7 @@
 layout: article
 title: Cleaning data in Python 
 key: 20200610
-tags: Python, Data science
+tags: Python, Data-science
 pageview: false
 modify_date: 2020-06-11
 aside:
@@ -113,8 +113,7 @@ ride_sharing.loc[ride_sharing['ride_dt'] > today, 'ride_dt'] = today
 print(ride_sharing['ride_dt'].max())
 ```
 
-### Fiding duplicates
-
+## Duplications
 **How big is your subset?**
 You have the following `loan` DataFrame which contains loan and credit score data for consumers, and some metadata such as their first and last names. You want to find both complete and incomplete duplicates using `.duplicated()`.
 
@@ -124,12 +123,59 @@ Hadrien	| Lacroix |	450	| 0
 
 Choose the correct usage of `.duplicated()` below:
 
-- `loans.duplicated()`. Because the default method returns both complete and incomplete duplicates.
-- `loans.duplicated(subset = 'first_name')`. Because constraining the duplicate rows to the first name lets me find incomplete duplicates as well.
-- [`loans.duplicated(subset = ['first_name', 'last_name'], keep = False)`. Because subsetting on consumer metadata and not discarding any duplicate returns all duplicated rows.](red)
-- `loans.duplicated(subset = ['first_name', 'last_name'], keep = 'first')`. Because this drops all duplicates.
+- `loans.duplicated()`. Because the default method returns both complete and incomplete duplicates. [Wrong](red)
+- `loans.duplicated(subset = 'first_name')`. Because constraining the duplicate rows to the first name lets me find incomplete duplicates as well.[Wrong](red)
+- `loans.duplicated(subset = ['first_name', 'last_name'], keep = False)`. Because subsetting on consumer metadata and not discarding any duplicate returns all duplicated rows. [Right](blue)
+- `loans.duplicated(subset = ['first_name', 'last_name'], keep = 'first')`. Because this drops all duplicates.[Wrong](red)
   
-### Treating duplicates
+### Fiding duplicatess
+A new update to the data pipeline feeding into `ride_sharing` has added the `ride_id` column, which represents a unique identifier for each ride.
 
+The update however coincided with radically shorter average ride duration times and irregular user birth dates set in the future. Most importantly, the number of rides taken has increased by 20% overnight, leading you to think there might be both complete and incomplete duplicates in the `ride_sharing` DataFrame.
+
+In this exercise, you will confirm this suspicion by finding those duplicates. A sample of `ride_sharing` is in your environment, as well as all the packages you've been working with thus far.
+
+- Find duplicated rows of `ride_id` in the `ride_sharing` DataFrame while setting `keep` to `False`.
+- Subset `ride_sharing` on `duplicates` and sort by `ride_id` and assign the results to `duplicated_rides`.
+- Print the `ride_id`, `duration` and `user_birth_year` columns of `duplicated_rides` in that order.
+
+```py
+# Find duplicates
+duplicates = ride_sharing.duplicated(subset='ride_id', keep=False)
+
+# Sort your duplicated rides
+duplicated_rides = ride_sharing[duplicates].sort_values('ride_id')
+
+# Print relevant columns of duplicated_rides
+print(duplicated_rides[['ride_id','duration','user_birth_year']])
+```
+
+### Treating duplicates
+In the last exercise, you were able to verify that the new update feeding into `ride_sharing` contains a bug generating both complete and incomplete duplicated rows for some values of the `ride_id` column, with occasional discrepant values for the `user_birth_year` and `duration` columns.
+
+In this exercise, you will be treating those duplicated rows by first dropping complete duplicates, and then merging the incomplete duplicate rows into one while keeping the average `duration`, and the minimum `user_birth_year` for each set of incomplete duplicate rows.
+
+- Drop complete duplicates in `ride_sharing` and store the results in `ride_dup`.
+- Create the `statistics` dictionary which holds minimum aggregation for `user_birth_year` and mean aggregation for `duration`.
+- Drop incomplete duplicates by grouping by `ride_id` and applying the aggregation in `statistics`.
+- Find duplicates again and run the `assert` statement to verify de-duplication.
+
+```py
+# Drop complete duplicates from ride_sharing
+ride_dup = ride_sharing.drop_duplicates()
+
+# Create statistics dictionary for aggregation function
+statistics = {'user_birth_year': 'min', 'duration': 'mean'}
+
+# Group by ride_id and compute new statistics
+ride_unique = ride_dup.groupby('ride_id').agg(statistics).reset_index()
+
+# Find duplicated values again
+duplicates = ride_unique.duplicated(subset = 'ride_id', keep = False)
+duplicated_rides = ride_unique[duplicates == True]
+
+# Assert duplicates are processed
+assert duplicated_rides.shape[0] == 0
+```
 
 ## 2. Text and categorical data problems
