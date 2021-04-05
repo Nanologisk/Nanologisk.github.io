@@ -553,8 +553,16 @@ Weight | 70 Kg is also 11 st.
 Date | 26-11-2019 is also 26, November, 2019
 Money | 100$ is also 10763.90¥
 
+### Creating temperature data 
+$$C=(F−32)× 5/9$$
 
-
+```py
+temp_fah = temperatures.loc[temperatures['Temperature'] > 40, 'Temperature']
+temp_cels = (temp_fah - 32) * (5/9)
+temperatures.loc[temperatures['Temperature'] > 40, 'Temperature'] = temp_cels
+# Assert conversion is correct
+assert temperatures['Temperature'].max() < 40
+```
 
 
 
