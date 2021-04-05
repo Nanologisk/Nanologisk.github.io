@@ -554,7 +554,7 @@ Date | 26-11-2019 is also 26, November, 2019
 Money | 100$ is also 10763.90¥
 
 ### Creating temperature data 
-$$C=(F−32)× 5/9$$
+$`C=(F−32)× 5/9`$
 
 ```py
 temp_fah = temperatures.loc[temperatures['Temperature'] > 40, 'Temperature']
