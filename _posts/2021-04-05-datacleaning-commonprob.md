@@ -553,10 +553,9 @@ Weight | 70 Kg is also 11 st.
 Date | 26-11-2019 is also 26, November, 2019
 Money | 100$ is also 10763.90¥
 
-### Creating temperature data 
-```math
-C=(F−32)× 5/9
-```
+**Creating temperature data** 
+From F to C: 
+C=(F−32)×5/9
 
 ```py
 temp_fah = temperatures.loc[temperatures['Temperature'] > 40, 'Temperature']
@@ -565,6 +564,55 @@ temperatures.loc[temperatures['Temperature'] > 40, 'Temperature'] = temp_cels
 # Assert conversion is correct
 assert temperatures['Temperature'].max() < 40
 ```
+
+**Datetime formatting**
+`Datetime` is useful for representing dates:
+Date | Datetime format
+25-12-2019 | %d-%m-%Y
+December 25th 2019 | %c
+12-25-2019 | %m-%d-%Y
+... | ...
+
+`pandas.to_datetime()`
+- Can recognize most formats automatically
+- Sometimes fails with erroneous or unrecognizable formats
+
+Treating date data
+```py
+# Converts to datetime - but won't work!
+birthdays['Birthday'] = pd.to_datetime(birthdays['Birthday'])
+
+#[Output] ValueError: month must be in 1..12
+
+# Will work!
+birthdays['Birthday'] = pd.to_datetime(birthdays['Birthday'],
+                        # Attempt to infer format of each date                                       
+                        infer_datetime_format=True, 
+                        # Return NA for rows where conversion failed                                       
+                        errors = 'coerce')
+                        
+birthdays['Birthday'] = birthdays['Birthday'].dt.strftime("%d-%m-%Y")
+```
+
+### Ambiguous dates
+You have a DataFrame containing a subscription_date column that was collected from various sources with different Date formats such as YYYY-mm-dd and YYYY-dd-mm. What is the best way to unify the formats for ambiguous values such as 2019-04-07?
+
+- Set them to NA and drop them.
+- Infer the format of the data in question by checking the format of subsequent and previous values.
+- Infer the format from the original data source.
+- All of the above are possible, as long as we investigate where our data comes from, and understand the dynamics affecting it before cleaning it. [Correct](red) :white_check_mark:
+
+###Uniform currencies
+
+In this exercise and throughout this chapter, you will be working with a retail `banking` dataset stored in the banking DataFrame. The dataset contains data on the amount of money stored in accounts, their currency, amount invested, account opening date and last transaction date that were consolidated from American and European branches.
+
+You are tasked with understanding the average account size and how investments vary by the size of account, however in order to produce this analysis accurately, you first need to unify the currency amount into dollars. The `pandas` package has been imported as `pd`, and the `banking` DataFrame is in your environment.
+
+- Find the rows of `acct_cur` in `banking` that are equal to `'euro'` and store them in `acct_eu`.
+- Find all the rows of `acct_amount` in `banking` that fit the `acct_eu` condition, and convert them to USD by multiplying them with `1.1`.
+- Find all the rows of `acct_cur` in banking that fit the `acct_eu` condition, set them to `'dollar'`.
+
+
 
 
 
