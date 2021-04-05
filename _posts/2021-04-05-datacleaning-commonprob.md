@@ -374,11 +374,9 @@ demographics['income_group'] = pd.cut(demographics['household_income'], bins=ran
 demographics[['income_group', 'household_income']]
 ```
 
-Map categories to fewer ones: reducing categories in categorical column.
-
-operating_system columnis: 'Microsoft', 'MacOS', 'IOS', 'Android', 'Linux'
-
-operating_system column should become: 'DesktopOS', 'MobileOS'
+Map categories to fewer ones: reducing categories in categorical column. For example:
+- operating_system columnis: 'Microsoft', 'MacOS', 'IOS', 'Android', 'Linux'
+- operating_system column should become: 'DesktopOS', 'MobileOS'
 
 ```py
 # Create mapping dictionary and replace
@@ -393,6 +391,54 @@ devices['operating_system'].unique()
 
 This returns: ```array(['DesktopOS', 'MobileOS'], dtype=object)```
 
+### Inconsistent categories
+The DataFrame contains flight metadata such as the airline, the destination, waiting times as well as answers to key questions regarding cleanliness, safety, and satisfaction on the San Francisco Airport.
+
+We will examine two categorical columns from this DataFrame, `dest_region` and `dest_size` respectively, assess how to address them and make sure that they are cleaned and ready for analysis. The `pandas` package has been imported as `pd`, and the `airlines` DataFrame is in your environment.
+
+Print the unique values in `dest_region` and `dest_size` respectively.
+
+```py
+# Print unique values of both columns
+print(airlines['dest_region'].value_counts())
+print(airlines['dest_size'].value_counts())
+```
+The problems with the columns:
+- The `dest_region` column has inconsistent values due to capitalization and has one value that needs to be remapped.
+- The `dest_size` column has only inconsistent values due to leading and trailing spaces.
+
+### Remapping categories
+
+To better understand survey respondents from airlines, you want to find out if there is a relationship between certain responses and the day of the week and wait time at the gate.
+
+The `airlines` DataFrame contains the `day` and `wait_min` columns, which are categorical and numerical respectively. The `day` column contains the exact day a flight took place, and `wait_min` contains the amount of minutes it took travelers to wait at the gate. To make your analysis easier, you want to create two new categorical variables:
+- `wait_type`: `'short'` for 0-60 min, `'medium'` for 60-180 and `long` for 180+
+- `day_week`: `'weekday'` if day is in the weekday, `'weekend'` if day is in the weekend.
+The `pandas` and `numpy` packages have been imported as `pd` and `np`. Let's create some new categorical data!
+
+
+- Create the ranges and labels for the `wait_type` column mentioned in the description above.
+- Create the `wait_type` column by from `wait_min` by using `pd.cut()`, while inputting `label_ranges` and `label_names` in the correct arguments.
+- Create the mapping dictionary mapping weekdays to `'weekday'` and weekend days to `'weekend'`.
+- Create the `day_week` column by using `.replace()`.
+
+```py
+# Create ranges for categories
+label_ranges = [0, 60, 180, np.inf]
+label_names = ['short', 'medium', 'long']
+
+# Create wait_type column
+airlines['wait_type'] = pd.cut(airlines['wait_min'], 
+                               bins = label_ranges, 
+                               labels = label_names)
+
+# Create mappings and replace
+mappings = {'Monday':'weekday', 'Tuesday':'weekday', 'Wednesday': 'weekday', 
+            'Thursday': 'weekday', 'Friday': 'weekday', 
+            'Saturday': 'weekend', 'Sunday': 'weekend'}
+
+airlines['day_week'] = airlines['day'].replace(mappings)
+```
 
 
 
