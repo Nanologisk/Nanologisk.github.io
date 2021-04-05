@@ -18,6 +18,7 @@ Based on DataCamp.
 - Text
 - Dates
 
+### Data type constrains
 Manipulating and analyzing data with incorrect data types could lead to compromised analysis as you go along the data science workflow.
 
 When working with new data, we could use the `.dtypes` attribute or the `.info()` method. Often times, you'll run into columns that should be converted to different data types before starting any analysis.
@@ -61,6 +62,13 @@ assert ride_sharing['duration_time'].dtype == 'int'
 print(ride_sharing[['duration','duration_trim','duration_time']])
 print(ride_sharing['duration_time'].mean())
 ```
+### Data range constrains
+Sometimes there might show up values that is out of the data range. For example, a future time included in the time point; or six stars in a five-star-system.
+
+Ways to deal with it:
+-  Drop values using filtering: `movies = movies[movies['avg_rating'] <= 5]`
+-  Drop values using: `.drop()`: `movies.drop(movies[movies['avg_rating'] > 5].index, inplace = True)`
+-  Assert results: `assert movies['avg_rating'].max() <= 5`
 
 ### Tire size constraints
 Bicycle tire sizes could be either 26″, 27″ or 29″ and are here correctly stored as a categorical value. In an effort to cut maintenance costs, the ride sharing provider decided to set the maximum tire size to be 27″.
@@ -179,3 +187,37 @@ assert duplicated_rides.shape[0] == 0
 ```
 
 ## 2. Text and categorical data problems
+
+Different types of constraints:
+- Data type constraints: 数据类型问题
+- Data range constraints: 数值范围问题
+- Uniqueness constraints: 重复值问题
+- Membership contstraints: 资格问题
+- 处理方式问题
+- 分类问题
+- 格式转化问题
+- 缺失值问题
+- 不同表格合并资格问题
+
+Membership constraints: when recording content that should not exist. F. eks. when recording blood type, misspell the type from A+ to Z+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
