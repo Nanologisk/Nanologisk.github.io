@@ -396,12 +396,31 @@ The DataFrame contains flight metadata such as the airline, the destination, wai
 
 We will examine two categorical columns from this DataFrame, `dest_region` and `dest_size` respectively, assess how to address them and make sure that they are cleaned and ready for analysis. The `pandas` package has been imported as `pd`, and the `airlines` DataFrame is in your environment.
 
-Print the unique values in `dest_region` and `dest_size` respectively.
+- Print the unique values in `dest_region` and `dest_size` respectively.
+- Change the capitalization of all values of `dest_region` to lowercase.
+- Replace the `'eur'` with `'europe'` in `dest_region` using the `.replace()` method.
+- Strip white spaces from the `dest_size` column using the `.strip()` method.
+- Verify that the changes have been into effect by printing the unique values of the columns using `.unique()`.
 
 ```py
 # Print unique values of both columns
 print(airlines['dest_region'].value_counts())
 print(airlines['dest_size'].value_counts())
+
+# Print unique values of both columns
+print(airlines['dest_region'].unique())
+print(airlines['dest_size'].unique())
+
+# Lower dest_region column and then replace "eur" with "europe"
+airlines['dest_region'] = airlines['dest_region'].str.lower()
+airlines['dest_region'] = airlines['dest_region'].replace({'eur':'europe'})
+
+# Remove white spaces from `dest_size`
+airlines['dest_size'] = airlines['dest_size'].str.strip()
+
+# Verify changes have been effected
+print(airlines['dest_region'].unique())
+print(airlines['dest_size'].unique())
 ```
 The problems with the columns:
 - The `dest_region` column has inconsistent values due to capitalization and has one value that needs to be remapped.
@@ -414,9 +433,10 @@ To better understand survey respondents from airlines, you want to find out if t
 The `airlines` DataFrame contains the `day` and `wait_min` columns, which are categorical and numerical respectively. The `day` column contains the exact day a flight took place, and `wait_min` contains the amount of minutes it took travelers to wait at the gate. To make your analysis easier, you want to create two new categorical variables:
 - `wait_type`: `'short'` for 0-60 min, `'medium'` for 60-180 and `long` for 180+
 - `day_week`: `'weekday'` if day is in the weekday, `'weekend'` if day is in the weekend.
+
 The `pandas` and `numpy` packages have been imported as `pd` and `np`. Let's create some new categorical data!
 
-
+**Instructions**:
 - Create the ranges and labels for the `wait_type` column mentioned in the description above.
 - Create the `wait_type` column by from `wait_min` by using `pd.cut()`, while inputting `label_ranges` and `label_names` in the correct arguments.
 - Create the mapping dictionary mapping weekdays to `'weekday'` and weekend days to `'weekend'`.
