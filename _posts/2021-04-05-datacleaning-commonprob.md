@@ -228,6 +228,7 @@ print('Satisfaction: ', airlines['satisfaction'].unique(), "\n")
 ```
 
 The output looks like this:
+
 ```
 <script.py> output:
           cleanliness           safety          satisfaction
@@ -245,7 +246,13 @@ The output looks like this:
     Satisfaction:  [Very satisfied, Neutral, Somewhat satisfied, Somewhat unsatisfied, Very unsatisfied]
     Categories (5, object): [Very satisfied, Neutral, Somewhat satisfied, Somewhat unsatisfied,
                              Very unsatisfied] 
-      ```
+```      
+
+Take a look at the output. Out of the cleanliness, safety and satisfaction columns, which one has an inconsistent category and what is it?
+- `cleanliness` because it has an `Unacceptable` category.
+- `cleanliness` because it has a `Terribly dirty` category.
+- `satisfaction` because it has a `Very satisfied` category.
+- `safety` because it has a `Neutral` category.
 
 
 
