@@ -663,8 +663,13 @@ Why do you think that is?
 
 ### Cross field validation
 
+The use of **multiple** fields in a dataset to sanity check data integrity.
+<img width="1020" alt="image" src="https://user-images.githubusercontent.com/57987646/113769978-e4024100-9721-11eb-8fae-699bc66d0e39.png">
 
+Here, we specify `axis = 1` to specify sum by the row.
 
+And here we check whether the `Age`  and `Birthday` columns give the same information.
+<img width="1012" alt="image" src="https://user-images.githubusercontent.com/57987646/113769822-b1f0df00-9721-11eb-8866-92c40e72256a.png">
 
 
 
