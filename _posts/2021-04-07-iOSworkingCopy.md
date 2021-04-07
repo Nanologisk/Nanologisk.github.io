@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Setting up Github with Working Copy and Ulysses
-tags: Working-Copy, Github, Ulysses
+tags: Working-Copy Github Ulysses
 modify\_date: 2021-04-05
 aside:
   toc: true
