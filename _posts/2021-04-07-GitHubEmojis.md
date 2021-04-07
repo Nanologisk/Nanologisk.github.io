@@ -6,7 +6,7 @@ modify\_date: 2021-04-07
 aside:
   toc: true
 ---
-The whole page copied from [rxaviers page][1].  :ship it:
+The whole page copied from [rxaviers page][1].  :shipit:
 
 <!--more-->
 
