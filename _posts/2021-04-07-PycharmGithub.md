@@ -1,14 +1,14 @@
 ---
 layout: article
-title: Setting up in Github in Pycharm
+title: Setting up Github in Pycharm
 tags: Pycharm Github
 modify\_date: 2021-04-05
 aside:
   toc: true
 ---
 
-It is working now.  :ghost:
+It is working now.  :octopus:
 
 <!--more-->
-## Setting up in Github in Pycharm
+### Setting up Github in Pycharm
 
