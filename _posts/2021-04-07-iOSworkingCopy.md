@@ -30,7 +30,9 @@ Changes can be pulled down through Working Copy
 
 Be aware of conflicts; they need to be solved  carefully by, for example choose the right version or part of the work, or merging the file.
 
-The work flow goes：Ulysses editing -\> Working Copy committing and pushing: choose the file, `commit changes`
+The work flow goes：Ulysses editing -\> Working Copy committing and pushing: choose the file, `commit changes`, write summary text (this can be omitted by changing the settings) and `commit`changes.
+
+
 
 
 
