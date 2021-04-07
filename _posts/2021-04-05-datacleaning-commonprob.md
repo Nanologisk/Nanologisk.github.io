@@ -4,7 +4,7 @@ title: Cleaning data in Python
 key: 20200610
 tags: Python, Data-science
 pageview: false
-modify_date: 2021-04-05
+modify\_date: 2021-04-05
 aside:
   toc: true
 ---
@@ -76,7 +76,7 @@ Bicycle tire sizes could be either 26″, 27″ or 29″ and are here correctly 
 In this exercise, the `tire_sizes` column has the correct range by first converting it to an integer, then setting and testing the new upper limit of 27″ for tire sizes.
 
 - Convert the `tire_sizes` column from category to `'int'`.
-- Use `.loc[]` to set all values of tire_sizes above 27 to 27.
+- Use `.loc[]` to set all values of tire\_sizes above 27 to 27.
 - Reconvert back `tire_sizes` to `'category`' from `int`.
 - Print the description of the `tire_sizes`.
 
@@ -125,17 +125,17 @@ print(ride_sharing['ride_dt'].max())
 **How big is your subset?**
 You have the following `loan` DataFrame which contains loan and credit score data for consumers, and some metadata such as their first and last names. You want to find both complete and incomplete duplicates using `.duplicated()`.
 
-first_name | last_name | credit_score	| has_loan
+first\_name | last\_name | credit\_score	| has\_loan
 Justin	| Saddlemeyer	| 600	| 1
 Hadrien	| Lacroix |	450	| 0
 
 Choose the correct usage of `.duplicated()` below:
 
-- `loans.duplicated()`. Because the default method returns both complete and incomplete duplicates. [Wrong](red) :x:
-- `loans.duplicated(subset = 'first_name')`. Because constraining the duplicate rows to the first name lets me find incomplete duplicates as well. [Wrong](red) :x:
-- `loans.duplicated(subset = ['first_name', 'last_name'], keep = False)`. Because subsetting on consumer metadata and not discarding any duplicate returns all duplicated rows. [Right](blue) :white_check_mark:
-- `loans.duplicated(subset = ['first_name', 'last_name'], keep = 'first')`. Because this drops all duplicates. [Wrong](red) :x:
-  
+- `loans.duplicated()`. Because the default method returns both complete and incomplete duplicates. [Wrong][1] :x:
+- `loans.duplicated(subset = 'first_name')`. Because constraining the duplicate rows to the first name lets me find incomplete duplicates as well. [Wrong][2] :x:
+- `loans.duplicated(subset = ['first_name', 'last_name'], keep = False)`. Because subsetting on consumer metadata and not discarding any duplicate returns all duplicated rows. [Right][3] :white\_check\_mark:
+- `loans.duplicated(subset = ['first_name', 'last_name'], keep = 'first')`. Because this drops all duplicates. [Wrong][4] :x:
+	  
 ### Fiding duplicatess
 A new update to the data pipeline feeding into `ride_sharing` has added the `ride_id` column, which represents a unique identifier for each ride.
 
@@ -246,13 +246,13 @@ The output looks like this:
     Satisfaction:  [Very satisfied, Neutral, Somewhat satisfied, Somewhat unsatisfied, Very unsatisfied]
     Categories (5, object): [Very satisfied, Neutral, Somewhat satisfied, Somewhat unsatisfied,
                              Very unsatisfied] 
-```      
+```
 
 Take a look at the output. Out of the cleanliness, safety and satisfaction columns, which one has an inconsistent category and what is it?
-- `cleanliness` because it has an `Unacceptable` category. [Right](blue) :white_check_mark:
-- `cleanliness` because it has a `Terribly dirty` category.  [Wrong](red) :x:
-- `satisfaction` because it has a `Very satisfied` category.  [Wrong](red) :x:
-- `safety` because it has a `Neutral` category.  [Wrong](red) :x:
+- `cleanliness` because it has an `Unacceptable` category. [Right][5] :white\_check\_mark:
+- `cleanliness` because it has a `Terribly dirty` category.  [Wrong][6] :x:
+- `satisfaction` because it has a `Very satisfied` category.  [Wrong][7] :x:
+- `safety` because it has a `Neutral` category.  [Wrong][8] :x:
 
 Next, find the column with different values using `set()` and `difference`:
 - Create a set out of the `cleanliness` column in `airlines`-dataset using `set()` and find the inconsistent category by finding the **difference** in the `cleanliness` column of `categories`-dataset.
@@ -329,7 +329,7 @@ In [4]: print(airlines[cat_clean_rows])
 To address common problems affecting categorical variables in the data includes white spaces and inconsistencies in the categories, and the problem of creating new categories and mapping existing ones to new ones.
 
 First, we can take a look at the values for a column using:
-- `df['colname'].value_counts()
+- \`df['colname'].value\_counts()
 - or perform value counts on DataFrame: `df['col2'].groupby(df['colname']).count()`
 
 This will give an overview of numbers of values/categories for the variable. Than we can address the problems by:
@@ -345,7 +345,7 @@ df['col'] = df['col'].str.upper()
 df['col'].value_counts()
 ```
 **Collapsing all of the state**
-![image](https://user-images.githubusercontent.com/57987646/113615218-ded6c080-9653-11eb-8a5a-a3eef6d3a975.png)
+![image][image-1]
 
 **Creating or remapping categories**:
 - `pandas.qcut()`: define labels, cut into *n* groups and bind with labels.
@@ -362,7 +362,7 @@ demographics['income_group'] = pd.qcut(demographics['household_income'], q = 3,
                                                                          labels = group_names)                                                 
  # Print income_group column
  demographics[['income_group', 'household_income']]
- ```
+```
 The `pandas.qcut()` method might not be precise enought. Another method which is much better: 
 
 ```py
@@ -377,8 +377,8 @@ demographics[['income_group', 'household_income']]
 ```
 
 Map categories to fewer ones: reducing categories in categorical column. For example:
-- operating_system columnis: 'Microsoft', 'MacOS', 'IOS', 'Android', 'Linux'
-- operating_system column should become: 'DesktopOS', 'MobileOS'
+- operating\_system columnis: 'Microsoft', 'MacOS', 'IOS', 'Android', 'Linux'
+- operating\_system column should become: 'DesktopOS', 'MobileOS'
 
 ```py
 # Create mapping dictionary and replace
@@ -391,7 +391,7 @@ devices['operating_system'] = devices['operating_system'].replace(mapping)
 devices['operating_system'].unique()
 ```
 
-This returns: ```array(['DesktopOS', 'MobileOS'], dtype=object)```
+This returns: `array(['DesktopOS', 'MobileOS'], dtype=object)`
 
 ### Inconsistent categories
 The DataFrame contains flight metadata such as the airline, the destination, waiting times as well as answers to key questions regarding cleanliness, safety, and satisfaction on the San Francisco Airport.
@@ -498,7 +498,7 @@ Your ultimate objective is to create two new columns named `first_name` and `las
 
 The `airlines` DataFrame is in your environment, alongside `pandas` as `pd`.
 - Remove "Dr.", "Mr.", "Miss" and "Ms." from `full_name` by replacing them with an empty string "" in that order.
-- Run the `assert` statement using `.str.contains()` that tests whether full_name still contains any of the honorifics.
+- Run the `assert` statement using `.str.contains()` that tests whether full\_name still contains any of the honorifics.
 
 ```py
 # Replace "Dr." with empty string ""
@@ -595,12 +595,12 @@ birthdays['Birthday'] = birthdays['Birthday'].dt.strftime("%d-%m-%Y")
 ```
 
 ### Ambiguous dates
-You have a DataFrame containing a subscription_date column that was collected from various sources with different Date formats such as YYYY-mm-dd and YYYY-dd-mm. What is the best way to unify the formats for ambiguous values such as 2019-04-07?
+You have a DataFrame containing a subscription\_date column that was collected from various sources with different Date formats such as YYYY-mm-dd and YYYY-dd-mm. What is the best way to unify the formats for ambiguous values such as 2019-04-07?
 
 - Set them to NA and drop them.
 - Infer the format of the data in question by checking the format of subsequent and previous values.
 - Infer the format from the original data source.
-- All of the above are possible, as long as we investigate where our data comes from, and understand the dynamics affecting it before cleaning it. [Correct](red) :white_check_mark:
+- All of the above are possible, as long as we investigate where our data comes from, and understand the dynamics affecting it before cleaning it. [Correct][9] :white\_check\_mark:
 
 ### Uniform currencies
 
@@ -654,15 +654,24 @@ banking['acct_year'] = banking['account_opened'].dt.strftime('%Y')
 print(banking['acct_year'])
 ```
 
-Take a look at the output. You tried converting the values to datetime using the default to_datetime() function without changing any argument, however received the following error: `ValueError: month must be in 1..12`
+Take a look at the output. You tried converting the values to datetime using the default to\_datetime() function without changing any argument, however received the following error: `ValueError: month must be in 1..12`
 
 Why do you think that is?
-- The to_datetime() function needs to be explicitly told which date format each row is in.
-- The to_datetime() function can only be applied on YY-mm-dd date formats.
-- The 21-14-17 entry is erroneous and leads to an error. [Correct](red):white_check_mark:
+- The to\_datetime() function needs to be explicitly told which date format each row is in.
+- The to\_datetime() function can only be applied on YY-mm-dd date formats.
+- The 21-14-17 entry is erroneous and leads to an error. [Correct][10]:white\_check\_mark:
 
 ### Cross field validation
 
+The use of **multiple** fields in a dataset to sanity check data integrity.
+
+
+
+Here, we specify `axis = 1` to specify sum by the row.
+\(img)
+And here we check whether the `Age`  and `Birthday` columns give the same information.
+
+Test from iPad
 
 
 
@@ -671,3 +680,17 @@ Why do you think that is?
 
 
 
+
+
+[1]:	red
+[2]:	red
+[3]:	blue
+[4]:	red
+[5]:	blue
+[6]:	red
+[7]:	red
+[8]:	red
+[9]:	red
+[10]:	red
+
+[image-1]:	https://user-images.githubusercontent.com/57987646/113615218-ded6c080-9653-11eb-8a5a-a3eef6d3a975.png
