@@ -2,7 +2,7 @@
 layout: article
 title: Cleaning data in Python 
 key: 20200610
-tags: Python, Data-science
+tags: Python Data-science
 pageview: false
 modify\_date: 2021-04-05
 aside:
@@ -135,7 +135,6 @@ Choose the correct usage of `.duplicated()` below:
 - `loans.duplicated(subset = 'first_name')`. Because constraining the duplicate rows to the first name lets me find incomplete duplicates as well. [Wrong][2] :x:
 - `loans.duplicated(subset = ['first_name', 'last_name'], keep = False)`. Because subsetting on consumer metadata and not discarding any duplicate returns all duplicated rows. [Right][3] :white\_check\_mark:
 - `loans.duplicated(subset = ['first_name', 'last_name'], keep = 'first')`. Because this drops all duplicates. [Wrong][4] :x:
-	  
 ### Fiding duplicatess
 A new update to the data pipeline feeding into `ride_sharing` has added the `ride_id` column, which represents a unique identifier for each ride.
 
