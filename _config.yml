@@ -218,8 +218,8 @@ defaults:
       license: true
       aside:
         toc: true
-      show_edit_on_github: true
-      show_subscribe: true
+      show_edit_on_github: false
+      show_subscribe: false
       pageview: true
   ## maki
   - scope:
@@ -232,7 +232,7 @@ defaults:
       license: true
       aside:
         toc: true
-      show_edit_on_github: true
+      show_edit_on_github: false
       show_date: false
       # lightbox: true
   ## melis
@@ -240,7 +240,7 @@ defaults:
       layout: article
       path: "_melis"
     values:
-      nav_key: photos
+      nav_key: melis
     show_date: false
 
 ## => Plugins
