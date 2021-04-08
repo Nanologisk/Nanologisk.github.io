@@ -67,7 +67,7 @@ datascience:
       - title:  Pandas
         url:    /datascience/pandas
       - title:  Scikit-learn
-        url:    /datascience/scikit-learn
+        url:    /datascience/scikitlearn
   - title:      R
     children:
       - title:  ggplot
