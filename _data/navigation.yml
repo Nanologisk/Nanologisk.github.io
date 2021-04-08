@@ -24,7 +24,7 @@ header:
       # @end locale config
     url: /archive.html
 
-  - title:      datascience
+  - title:      Data Science
     url:        /datascience.html
     key:        datascience
 
