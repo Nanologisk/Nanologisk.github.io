@@ -243,6 +243,7 @@ defaults:
       nav_key: socialscience
     show_date: false
 
+
 ## => Plugins
 ##############################
 plugins:
