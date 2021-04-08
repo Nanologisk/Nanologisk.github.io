@@ -1,6 +1,6 @@
 ---
 layout: article
-title: June
+title: Using Pandas 
 permalink: /datascience/pandas
 key: datascience-pandas
 modify_date: 2021-04-08
