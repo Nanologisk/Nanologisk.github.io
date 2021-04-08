@@ -24,6 +24,14 @@ header:
       # @end locale config
     url: /archive.html
 
+  - title:      datascience
+    url:        /datascience.html
+    key:        datascience
+
+  - title:      socialscience
+    url:        /socialscience.html
+    key:        socialscience
+
   - titles:
       # @start locale config
       en      : &EN       About
@@ -48,3 +56,19 @@ header:
       fr-LU   : *FR
       # @end locale config
     url: /about.html
+
+
+  - title:      GitHub
+    url:        https://github.com/Nanologisk/Nanologisk.github.io
+
+datascience:
+  - title:      Python
+    children:
+      - title:  Pandas
+        url:    /datascience/pandas
+      - title:  Scikit-learn
+        url:    /datascience/scikit-learn
+  - title:      R
+    children:
+      - title:  ggplot
+        url:    /datascience/ggplot
