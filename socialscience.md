@@ -10,7 +10,7 @@ article_header:
   background_image:
     src: https://github.com/Nanologisk/Nanologisk.github.io/blob/master/pictures/socialscience.jpg
 sidebar:
-    nav: socialscience
+    nav: Social Science
 ---
 
 Text here.
