@@ -28,7 +28,7 @@ header:
     url:        /datascience.html
     key:        datascience
 
-  - title:      socialscience
+  - title:      Social Science
     url:        /socialscience.html
     key:        socialscience
 
@@ -72,3 +72,4 @@ datascience:
     children:
       - title:  ggplot
         url:    /datascience/ggplot
+        
