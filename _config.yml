@@ -202,9 +202,9 @@ exclude:
   - /vendor
 
 collections:
-  maki:
+  datascience:
     output: true
-  melis:
+  socialscience:
     output: true
     
 defaults:
@@ -221,26 +221,26 @@ defaults:
       show_edit_on_github: false
       show_subscribe: false
       pageview: true
-  ## maki
+  ## datascience
   - scope:
-      path: "_maki"
+      path: "_datascience"
     values:
       layout: article
-      nav_key: maki
+      nav_key: datascience
       sidebar:
-        nav: maki
+        nav: datascience
       license: true
       aside:
         toc: true
       show_edit_on_github: false
       show_date: false
       # lightbox: true
-  ## melis
+  ## socialscience
   - scope:
       layout: article
-      path: "_melis"
+      path: "socialscience"
     values:
-      nav_key: melis
+      nav_key: socialscience
     show_date: false
 
 ## => Plugins
