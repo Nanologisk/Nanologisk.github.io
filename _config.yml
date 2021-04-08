@@ -243,7 +243,6 @@ defaults:
       nav_key: photos
     show_date: false
 
-
 ## => Plugins
 ##############################
 plugins:
