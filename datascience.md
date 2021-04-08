@@ -7,7 +7,6 @@ header:
   theme: dark
 article_header:
   type: overlay
-  theme: dark
   background_image:
     src: https://github.com/Nanologisk/Nanologisk.github.io/blob/master/pictures/datascience-hero.jpg
 sidebar:
