@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Maki
-key: maki-cat
+key: maki
 mode: immersive
 header:
   theme: dark
