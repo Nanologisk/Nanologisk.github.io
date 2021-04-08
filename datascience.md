@@ -8,7 +8,7 @@ header:
 article_header:
   type: overlay
   background_image:
-    src: https://github.com/Nanologisk/Nanologisk.github.io/blob/master/pictures/datascience-hero.jpg
+    src: https://github.com/Nanologisk/Nanologisk.github.io/blob/master/pictures/datascience-hero.jpg?raw=true
 sidebar:
     nav: datascience
 ---
