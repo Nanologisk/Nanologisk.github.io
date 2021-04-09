@@ -14,6 +14,7 @@ Bowne-Anderson.
 
 <!--more-->
 
+## Classification
 ### 1. The EDA dataset
 You'll be working with a dataset obtained from the **UCI Machine
 Learning Repository** consisting of votes made by US House of
