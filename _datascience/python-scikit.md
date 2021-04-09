@@ -14,8 +14,83 @@ Bowne-Anderson.
 
 <!--more-->
 
-## Classification
-### 1. K-nearest neighbors: fit
+### 1. The EDA dataset
+You'll be working with a dataset obtained from the **UCI Machine
+Learning Repository** consisting of votes made by US House of
+Representatives Congressmen. Your goal will be to predict their party
+affiliation ('Democrat' or 'Republican') based on how they voted on
+certain key issues. Here, it's worth noting that we have preprocessed
+this dataset to deal with missing values. This is so that your focus can
+be directed towards understanding how to train and evaluate supervised
+learning models.
+
+Get started with your EDA now by exploring this voting records dataset
+numerically. It has been pre-loaded for you into a DataFrame called df.
+Use pandas' `.head()`, `.info()`, and `.describe()` methods in the IPython
+Shell to explore the DataFrame, and select the statement below that is
+not true.
+
+```python
+df.head()
+df.info()
+df.describe()
+```
+
+Using the `scatter_matrix()` function on the Iris data. All the features
+in this dataset are binary; that is, they are either 0 or 1. So a
+different type of plot would be more useful here, such as `Seaborn`'s
+`countplot`.
+
+Given on the right is a countplot of the '`education`' bill, generated
+from the following code:
+
+```py
+plt.figure()
+sns.countplot(x='education', hue='party', data=df, palette='RdBu')
+plt.xticks([0,1], ['No', 'Yes'])
+plt.show()
+```
+In `sns.countplot()`, we specify the x-axis data to be `'education'`, and
+hue to be `'party'`. Recall that `'party'` is also our target variable. So
+the resulting plot shows the difference in voting behavior between the
+two parties for the `'education'` bill, with each party colored
+differently. We manually specified the color to be `'RdBu'`, as the
+Republican party has been traditionally associated with red, and the
+Democratic party with blue.
+
+It seems like Democrats voted resoundingly against this bill, compared
+to Republicans. This is the kind of information that our machine
+learning model will seek to learn when we try to predict party
+affiliation solely based on voting behavior. An expert in U.S politics
+may be able to predict this without machine learning, but probably not
+instantaneously - and certainly not if we are dealing with hundreds of
+samples!
+
+In the IPython Shell, explore the voting behavior further by generating
+`countplots` for the `'satellite'` and `'missile'` bills, and answer the
+following question: Of these two bills, for which ones do Democrats vote
+resoundingly in favor of, compared to Republicans? Be sure to begin your
+plotting statements for each figure with `plt.figure()` so that a new
+figure will be set up. Otherwise, your plots will be overlaid onto the
+same figure.
+
+```py
+df.head()
+
+# Satellite
+plt.figure()
+sns.countplot(x='satellite', hue='party', data=df, palette='RdBu')
+plt.xticks([0,1], ['No', 'Yes'])
+plt.show()
+
+# Missile
+plt.figure()
+sns.countplot(x='missile', hue='party', data=df, palette='RdBu')
+plt.xticks([0,1], ['No', 'Yes'])
+plt.show()
+```
+
+### 2. K-nearest neighbors: fit
 k-Nearest Neighbors: Fit Having explored the Congressional voting
 records dataset, it is time now to build your first classifier.
 
@@ -63,7 +138,7 @@ knn = KNeighborsClassifier(n_neighbors=6)
 knn.fit(X,y)
 ```
 
-### 2. K-nearest neighbors: predict
+### 3. K-nearest neighbors: predict
 k-Nearest Neighbors: Predict Having fit a `k-NN classifier`, you can now
 use it to predict the label of a new data point. However, there is no
 unlabeled data available since all of it was used to fit the model! You
@@ -110,7 +185,7 @@ new_prediction = knn.predict(X_new)
 print("Prediction: {}".format(new_prediction))
 ```
 
-### 3. The Digits recognation data
+### 4. The Digits recognation data
 The digits recognition dataset Up until now, you have been performing
 binary classification, since the target variable had two possible
 outcomes.
@@ -169,10 +244,7 @@ print(digits.images.shape)
 print(digits.data.shape)
 ```
 
-
-
-### 4. Train/test split, Fit/Predict/Accuracy
-
+### 5. Train/test split, Fit/Predict/Accuracy
 Now that you have learned about the importance of splitting your data
 into training and test sets, it's time to practice doing this on the
 `digits` dataset! After creating arrays for the features and target
@@ -223,8 +295,7 @@ plt.imshow(digits.images[1010], cmap=plt.cm.gray_r, interpolation='nearest')
 plt.show()
 ```
 
-### 5. Overfitting and underfitting
-
+### 6. Overfitting and underfitting
 In this exercise, you will compute and plot the training and testing
 accuracy scores for a variety of different neighbor values. By observing
 how the accuracy scores differ for the training and testing sets with
@@ -272,7 +343,6 @@ plt.show()
 ```
 
 ## Regression
-
 ### 1. Importing data for supervised learning
 You will work with `Gapminder` data that we have consolidated into one
 CSV file available in the workspace as '`gapminder.csv`'. Specifically,
@@ -539,11 +609,11 @@ print(np.mean(cvscores_10))
 ```
 
 ### 6. Regularization I: Lasso regression
-In the video, you saw how Lasso selected out the `'RM'` feature as
-being the most important for predicting Boston house prices, while
-shrinking the coefficients of certain other features to 0. Its ability
-to perform feature selection in this way becomes even more useful when
-you are dealing with data involving thousands of features.
+Lasso selected out the `'RM'` feature as being the most important for
+predicting Boston house prices, while shrinking the coefficients of
+certain other features to 0. Its ability to perform feature selection in
+this way becomes even more useful when you are dealing with data
+involving thousands of features.
 
 In this exercise, you will fit a lasso regression to the `Gapminder` data
 you have been working with and plot the coefficients. Just as with the
@@ -683,7 +753,6 @@ def display_plot(cv_scores, cv_scores_std):
     plt.show()
 ```
 
-
 ## Fine-tuning your model
 ### 1. Metrics for classification
 In Chapter 1, you evaluated the performance of your k-NN classifier
@@ -692,13 +761,13 @@ always an informative metric. In this exercise, you will dive more
 deeply into evaluating the performance of binary classifiers by
 computing a confusion matrix and generating a classification report.
 
-You may have noticed in the video that the classification report
-consisted of three rows, and an additional *support* column. The
-*support* gives the number of samples of the true response that lie in
-that class - so in the video example, the support was the number of
-Republicans or Democrats in the test set on which the classification
-report was computed. The *precision*, *recall*, and *f1-score columns*,
-then, gave the respective metrics for that particular class.
+You may have noticed that the classification report consisted of three
+rows, and an additional *support* column. The *support* gives the number
+of samples of the true response that lie in that class - so in the
+example, the support was the number of Republicans or Democrats in the
+test set on which the classification report was computed. The
+*precision*, *recall*, and *f1-score columns*, then, gave the respective
+metrics for that particular class.
 
 Here, you'll work with the `PIMA Indians` dataset obtained from the UCI
 Machine Learning Repository. The goal is to predict whether or not a
