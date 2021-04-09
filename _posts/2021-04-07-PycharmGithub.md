@@ -57,7 +57,7 @@ It is working now.  :ghost:
     **Push** in the bottom-left corner.
   + A **Push successful** or **Everything is up to date** window will
     pop up in the bottom right corner to inform the action is done.
-- Always **commit** before **push**.
+- NB! Always **commit file** before **push**.
 
 ### 5. Update the local folder with GH
 - Use the **pull** symbol (blue arrow in the up-right corner) to update
