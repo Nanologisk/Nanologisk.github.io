@@ -13,7 +13,7 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
 <!--more-->
 ### 1. Setting up Github in Pycharm
 - **Settings/Preferences** dialog `Ctrl+Alt+S`, select **Version Control
-  | GitHub** in the left pane
+  \| GitHub** in the left pane
 - Click **+**
 - In the dialog box, specify GitHub server URL (github.com).
   + Obtain a new token, enter login information and password
@@ -23,7 +23,7 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
   [Pycharm's page](https://www.jetbrains.com/help/pycharm/github.html)
 
 ### 2. Clone repository
-- In the menu bar, choose **VCS** if any, or click direct **Git |
+- In the menu bar, choose **VCS** if any, or click direct **Git \|
   Clone** if **VCS** does not show in the menu-bar.
 - **Clone Repository**
   + URL: the GH address will show if already logged in
@@ -33,7 +33,7 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
 
 ### 3. Change branches if necessary
 - Right click the folder that need to change branches
-- Choose **Git | Branches** here.
+- Choose **Git \| Branches** here.
   + The pop-up window: Git Branches: **Local Branches**: master,
     **Remote Branches**: origin/master, orgin/...
   + Check on the GH-site which branch the folder belongs to
@@ -41,7 +41,7 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
 
 ###  4. Manage project hosted on GitHub- Configure and synchronise
 - Edit a file (e.g. test.md file)
-- Right click the file, and choose **Git | Commit Directory**.
+- Right click the file, and choose **Git \| Commit Directory**.
 - The pop-up window will show changes (bottom left vs bottom right
   versions), as well as allowing for **commit message** to note which
   changes that have been done.
@@ -64,7 +64,7 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
 ### 5. Update the local folder with GH
 - Use the **pull** symbol (blue arrow in the up-right corner) to update
   project `Ctrl + T`.
-- Right click on the folder, so choose **Git | pull**.
+- Right click on the folder, so choose **Git \| pull**.
 
 ### Useful links
 [How to configure and use GitHub from Pycharm](https://www.youtube.com/watch?v=7sinNdn49Uk)
