@@ -22,7 +22,7 @@ It is working now.  :ghost:
   [Pycharm's page](https://www.jetbrains.com/help/pycharm/github.html)
 
 ### 2. Clone resipotory
-- **VCS** or **Git | Clone** in the menu-bar.
+- **VCS** if any, or click direct **Git | Clone** in the menu-bar.
 - **Clone Repository**
   + URL: the GH address will show if already logged in
   + Directory: the local directory
@@ -64,7 +64,7 @@ It is working now.  :ghost:
   project `Ctrl + T`.
 - Right click on the folder, **Git | pull**.
 
-### Useful links:
+### Useful links
 [How to configure and use GitHub from Pycharm](https://www.youtube.com/watch?v=7sinNdn49Uk)
 
 [Setting up GitHub for Pycharm](https://www.jetbrains.com/help/pycharm/github.html)
