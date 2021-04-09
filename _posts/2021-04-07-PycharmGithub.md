@@ -61,8 +61,8 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
   + A **Push successful** or **Everything is up to date** window will
     pop up in the bottom right corner to inform the action is done.
 - NB! Always **commit file** before **push**.
-- Here are the options under **Git** after right click on the file:
-  ![gitscreen](../docs/assets/images/gitscreen.png)
+- Here are the options under **Git** after right clicking on the file:
+  ![png]({{"/pictures/gitoptions.png"}})
 
 ### 5. Update the local folder with GH
 - Use the **pull** symbol (blue arrow in the up-right corner) to update
