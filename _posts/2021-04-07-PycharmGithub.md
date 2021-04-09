@@ -22,7 +22,7 @@ It is working now.  :ghost:
   [Pycharm's page](https://www.jetbrains.com/help/pycharm/github.html)
 
 ### 2. Clone resipotory
-- **VCS** -> **Git | Clone**
+- **VCS** or **Git | Clone** in the menu-bar.
 - **Clone Repository**
   + URL: the GH address will show if already logged in
   + Directory: the local directory
@@ -49,5 +49,20 @@ It is working now.  :ghost:
   Here is the [screenshot](../docs/assets/images/image.png).
 - If everything looks ok, click **Commit** in the **Commit changes**
   pop-up window.
--
+- In order to synchronise changes, click on the **push** symbol (green
+  arrow in the up-right corner).
+- Right click the file, than click on **Git | Push** `Ctrl+Shift+K`.
+  + This will show a new window with **Push commits**, and here we can
+    right click again and double check for **Show diff**. Than click
+    **Push** in the bottom-left corner.
+  + A **Push successful** or **Everything is up to date** window will
+    pop up in the bottom right corner to inform the action is done.
 
+### 5. Update the local folder with GH
+- Use the **pull** symbol (blue arrow in the up-right corner) to update
+  project `Ctrl + T`.
+- Right click on the folder, **Git | pull**.
+
+### Useful links:
+[How to configure and use GitHub from Pycharm](https://www.youtube.com/watch?v=7sinNdn49Uk)
+[Setting up GitHub for Pycharm](https://www.jetbrains.com/help/pycharm/github.html)
