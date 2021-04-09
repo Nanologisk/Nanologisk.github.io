@@ -48,12 +48,12 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
 - Right click on the file in the pop-up window will allow to **Show
   Diff** `Ctrl+D`, which will show the changes modified. The same window
   shows also alternative to revert changes: **Revert** `Ctrl+Alt+Z`.
-  Here is the [screenshot](https://github.com/Nanologisk/Nanologisk.github.io/blob/master/pictures/commit_directory.jpg?raw=true).
+  Here is the ![jpg]{{"/pictures/commit_directory.jpg"}}.
 - If everything looks ok, click **Commit** in the **Commit changes**
   pop-up window.
 - In order to synchronise changes, click on the **push** symbol (green
   arrow in the up-right corner).
-- Right click the file, then click on **Git | Push** `Ctrl+Shift+K`.
+- Right click the file, then click on **Git \| Push** `Ctrl+Shift+K`.
   + This will show a new window with **Push commits**, and here we can
     right click again and double check for **Show diff**. Finally, click
     **Push** in the bottom-left corner to push the file to GH.
