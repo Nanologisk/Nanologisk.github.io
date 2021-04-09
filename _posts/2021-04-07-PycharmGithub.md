@@ -66,4 +66,5 @@ It is working now.  :ghost:
 
 ### Useful links:
 [How to configure and use GitHub from Pycharm](https://www.youtube.com/watch?v=7sinNdn49Uk)
+
 [Setting up GitHub for Pycharm](https://www.jetbrains.com/help/pycharm/github.html)
