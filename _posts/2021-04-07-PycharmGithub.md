@@ -22,7 +22,8 @@ It is working now.  :ghost:
   [Pycharm's page](https://www.jetbrains.com/help/pycharm/github.html)
 
 ### 2. Clone resipotory
-- **VCS** if any, or click direct **Git | Clone** in the menu-bar.
+- In the menu bar, choose **VCS** if any, or click direct **Git |
+  Clone** if **VCS** does not show in the menu-bar.
 - **Clone Repository**
   + URL: the GH address will show if already logged in
   + Directory: the local directory
