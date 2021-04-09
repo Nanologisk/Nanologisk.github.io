@@ -1,16 +1,17 @@
 ---
 layout: article
-title: Setting up in Github in Pycharm
-tags: Pycharm, Github
+title: Setting up Github in Pycharm
+tags: Pycharm Github
 modify_date: 2021-04-05
 aside:
   toc: true
 ---
 
-It is working now.  :ghost:
+Commit changes and edit files with Pycharm and synchronise with GitHub.
+:ghost:
 
 <!--more-->
-### 1. Setting up in Github in Pycharm
+### 1. Setting up Github in Pycharm
 - **Settings/Preferences** dialog `Ctrl+Alt+S`, select **Version Control
   | GitHub** in the left pane
 - Click **+**
@@ -21,7 +22,7 @@ It is working now.  :ghost:
 - More information can be found in
   [Pycharm's page](https://www.jetbrains.com/help/pycharm/github.html)
 
-### 2. Clone resipotory
+### 2. Clone repository
 - In the menu bar, choose **VCS** if any, or click direct **Git |
   Clone** if **VCS** does not show in the menu-bar.
 - **Clone Repository**
