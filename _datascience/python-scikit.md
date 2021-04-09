@@ -9,7 +9,7 @@ sidebar:
     nav: datascience
 ---
 
-Python Scikit-learn exercises, from Datacamp. By Muller and
+Python Scikit-learn exercises, from Datacamp by Muller and
 Bowne-Anderson.
 
 <!--more-->
