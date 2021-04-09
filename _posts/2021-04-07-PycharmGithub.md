@@ -47,8 +47,9 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
   changes that have been done.
 - Right click on the file in the pop-up window will allow to **Show
   Diff** `Ctrl+D`, which will show the changes modified. The same window
-  shows also alternative to revert changes: **Revert** `Ctrl+Alt+Z`.
-  Here is the ![jpg]({{"/pictures/commit_directory.jpg"}}).
+  shows also alternative to revert changes: **Revert** `Ctrl+Alt+Z`. The
+  commit directory window looks like this:
+  ![jpg]({{"/pictures/commit_directory.jpg"}})
 - If everything looks ok, click **Commit** in the **Commit changes**
   pop-up window.
 - In order to synchronise changes, click on the **push** symbol (green
@@ -60,6 +61,8 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
   + A **Push successful** or **Everything is up to date** window will
     pop up in the bottom right corner to inform the action is done.
 - NB! Always **commit file** before **push**.
+- Here are the options under **Git** after right click on the file:
+  ![gitscreen](../docs/assets/images/gitscreen.png)
 
 ### 5. Update the local folder with GH
 - Use the **pull** symbol (blue arrow in the up-right corner) to update
@@ -70,3 +73,5 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
 [How to configure and use GitHub from Pycharm](https://www.youtube.com/watch?v=7sinNdn49Uk)
 
 [Setting up GitHub for Pycharm](https://www.jetbrains.com/help/pycharm/github.html)
+
+
