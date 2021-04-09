@@ -1057,7 +1057,7 @@ hold-out set.
 - Print the best parameter and best score obtained from
   `GridSearchCV` by accessing the `best_params_` and `best_score_` attributes
   of `logreg_cv`.
--
+
 ```py
 # Import necessary modules
 from sklearn.model_selection import train_test_split
