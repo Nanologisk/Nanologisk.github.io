@@ -33,7 +33,7 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
 
 ### 3. Change branches if necessary
 - Right click the folder that need to change branches
-- Choose **Git | Branches**
+- Choose **Git | Branches** here.
   + The pop-up window: Git Branches: **Local Branches**: master,
     **Remote Branches**: origin/master, orgin/...
   + Check on the GH-site which branch the folder belongs to
@@ -41,7 +41,7 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
 
 ###  4. Manage project hosted on GitHub- Configure and synchronise
 - Edit a file (e.g. test.md file)
-- Right click the file, and choose **Git | Commit Directory**
+- Right click the file, and choose **Git | Commit Directory**.
 - The pop-up window will show changes (bottom left vs bottom right
   versions), as well as allowing for **commit message** to note which
   changes that have been done.
@@ -64,7 +64,7 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
 ### 5. Update the local folder with GH
 - Use the **pull** symbol (blue arrow in the up-right corner) to update
   project `Ctrl + T`.
-- Right click on the folder, **Git | pull**.
+- Right click on the folder, so choose **Git | pull**.
 
 ### Useful links
 [How to configure and use GitHub from Pycharm](https://www.youtube.com/watch?v=7sinNdn49Uk)
