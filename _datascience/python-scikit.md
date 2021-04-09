@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Using Scikit-learn
+title: Scikit-learn excercises
 permalink: /datascience/scikitlearn
 key: datascience-scikitlearn
 modify_date: 2021-04-08
@@ -9,7 +9,8 @@ sidebar:
     nav: datascience
 ---
 
-Python Scikit-learn, from Datacamp.
+Python Scikit-learn exercises, from Datacamp. By Muller and
+Bowne-Anderson.
 
 <!--more-->
 
