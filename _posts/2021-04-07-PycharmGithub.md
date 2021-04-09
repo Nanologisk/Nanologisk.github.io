@@ -48,7 +48,7 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
 - Right click on the file in the pop-up window will allow to **Show
   Diff** `Ctrl+D`, which will show the changes modified. The same window
   shows also alternative to revert changes: **Revert** `Ctrl+Alt+Z`.
-  Here is the ![jpg]{{"/pictures/commit_directory.jpg"}}.
+  Here is the ![jpg]({{"/pictures/commit_directory.jpg"}}).
 - If everything looks ok, click **Commit** in the **Commit changes**
   pop-up window.
 - In order to synchronise changes, click on the **push** symbol (green
