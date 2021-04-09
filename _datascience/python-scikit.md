@@ -15,7 +15,7 @@ Bowne-Anderson.
 <!--more-->
 
 ## Classification
-### 1. K-nearest neighbors fit
+### 1. K-nearest neighbors: fit
 k-Nearest Neighbors: Fit Having explored the Congressional voting
 records dataset, it is time now to build your first classifier.
 
@@ -63,7 +63,7 @@ knn = KNeighborsClassifier(n_neighbors=6)
 knn.fit(X,y)
 ```
 
-### 2. k-nearest neighbors predict
+### 2. K-nearest neighbors: predict
 k-Nearest Neighbors: Predict Having fit a `k-NN classifier`, you can now
 use it to predict the label of a new data point. However, there is no
 unlabeled data available since all of it was used to fit the model! You
@@ -110,7 +110,7 @@ new_prediction = knn.predict(X_new)
 print("Prediction: {}".format(new_prediction))
 ```
 
-### 3. The Digits recognation dataset
+### 3. The Digits recognation data
 The digits recognition dataset Up until now, you have been performing
 binary classification, since the target variable had two possible
 outcomes.
@@ -171,7 +171,7 @@ print(digits.data.shape)
 
 
 
-### 4. Train/Test Split and Fit/Predict/Accuracy
+### 4. Train/test split, Fit/Predict/Accuracy
 
 Now that you have learned about the importance of splitting your data
 into training and test sets, it's time to practice doing this on the
@@ -911,7 +911,7 @@ scoring='roc_auc')
 print("AUC scores computed using 5-fold cross-validation: {}".format(cv_auc))
 ```
 
-### 6. Hyperparameter tuning with GridSearchCV
+### 6. Hyperparameter tuning: GridSearchCV
 Hugo demonstrated how to use to tune the `n_neighbors` parameter of the
 `KNeighborsClassifier()` using `GridSearchCV` on the voting dataset. You
 will now practice this yourself, but by using logistic regression on the
@@ -971,7 +971,7 @@ print("Tuned Logistic Regression Parameters: {}".format(logreg_cv.best_params_))
 print("Best score is {}".format(logreg_cv.best_score_))
 ```
 
-### 7. Hyperparameter tuning with RandomizedSearchCV
+### 7. Hyperparameter tuning: RandomizedSearchCV
 `GridSearchCV` can belly expensive, especially if you are searching over a
 large hyperparameter space and dealing with multiple hyperparameters. A
 solution to this is to use `RandomizedSearchCV`, in which not all
@@ -1032,7 +1032,7 @@ print("Tuned Decision Tree Parameters: {}".format(tree_cv.best_params_))
 print("Best score is {}".format(tree_cv.best_score_))
 ```
 
-### 8. Hold-out set in practice I: Classification
+### 8. Hold-out set I: Classification
 You will now practice evaluating a model with tuned hyperparameters on a
 hold-out set. The feature array and target variable array from the
 diabetes dataset have been pre-loaded as `X` and `y`.
@@ -1085,7 +1085,7 @@ print("Tuned Logistic Regression Parameter: {}".format(logreg_cv.best_params_))
 print("Tuned Logistic Regression Accuracy: {}".format(logreg_cv.best_score_))
 ```
 
-### 9. Hold-out set in practice II: Regression
+### 9. Hold-out set II: Regression
 Remember lasso and ridge regression from the previous chapter? Lasso
 used the *L1* penalty to regularize, while ridge used the *L2* penalty.
 There is another type of regularized regression known as the elastic
@@ -1152,7 +1152,7 @@ print("Tuned ElasticNet R squared: {}".format(r2))
 print("Tuned ElasticNet MSE: {}".format(mse))
 ```
 
-## Preprocessing data and pipelines
+## Preprocessing data & pipelines
 
 ### 1. Exploring categorical features
 The Gapminder dataset that you worked with in previous chapters also
@@ -1217,7 +1217,7 @@ df_region = pd.get_dummies(df, drop_first=True)
 print(df_region.columns)
 ```
 
-### 3. Regression with categorical features
+### 3. Regression w. categorical features
 Having created the dummy variables from the `'Region'` feature, you can
 build regression models as you did before. Here, you'll use ridge
 regression to perform 5-fold cross-validation.
@@ -1289,7 +1289,7 @@ df = df.dropna()
 print("Shape of DataFrame After Dropping All Rows with Missing Values: {}".format(df.shape))
 ```
 
-### 5. Imputing missing data in a ML Pipeline I
+### 5. Imputation in a ML Pipeline I
 As you've come to appreciate, there are many steps to building a model,
 from creating training and test sets, to fitting a classifier or
 regressor, to tuning its parameters, to evaluating its performance on
@@ -1334,7 +1334,7 @@ steps = [('imputation', imp),
         ('SVM', clf)]
 ```
 
-### 6. Imputing missing data in a ML Pipeline II
+### 6. Imputation in a ML Pipeline II
 Having setup the steps of the pipeline in the previous exercise, you
 will now use it on the voting dataset to classify a Congressman's party
 affiliation. What makes pipelines so incredibly useful is the simple
@@ -1387,7 +1387,7 @@ y_pred = pipeline.predict(X_test)
 print(classification_report(y_test, y_pred))
 ```
 
-### 7. Centering and scaling your data
+### 7. Centering and scaling data
 In the Congressional voting records dataset, for example, all of the
 features are binary. In such a situation, scaling will have minimal
 impact.
@@ -1429,7 +1429,7 @@ print("Mean of Scaled Features: {}".format(np.mean(X_scaled)))
 print("Standard Deviation of Scaled Features: {}".format(np.std(X_scaled)))
 ```
 
-### 8. Centering and scaling in a pipeline
+### 8. Centering and scaling: pipeline
 With regard to whether or not scaling is effective, the proof is in the
 pudding! See for yourself whether or not scaling the features of the
 White Wine Quality dataset has any impact on its performance. You will
@@ -1479,7 +1479,7 @@ print('Accuracy with Scaling: {}'.format(knn_scaled.score(X_test, y_test)))
 print('Accuracy without Scaling: {}'.format(knn_unscaled.score(X_test, y_test)))
 ```
 
-### 9. Bringing it all together I: Pipeline for classification
+### 9. Pipeline for classification
 Your job in this exercise is to build a pipeline that includes scaling
 and hyperparameter tuning to classify wine quality. You'll return to
 using the `SVM` classifier. The hyperparameters you will tune are *C*
@@ -1536,7 +1536,7 @@ print(classification_report(y_test, y_pred))
 print("Tuned Model Parameters: {}".format(cv.best_params_))
 ```
 
-### 10. Bringing it all together II:
+### 10. Bringing it all together
 Pipeline for regression For this final exercise, you will return to the
 Gapminder dataset. Your job is to build a pipeline that imputes the missing data,
 scales the features, and fits an `ElasticNet` to the `Gapminder` data. You
