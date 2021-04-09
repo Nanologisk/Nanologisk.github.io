@@ -35,7 +35,7 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
 - Right click the folder that need to change branches
 - Choose **Git \| Branches** here.
   + The pop-up window: Git Branches: **Local Branches**: master,
-    **Remote Branches**: origin/master, orgin/...
+    **Remote Branches**: origin/master, origin/...
   + Check on the GH-site which branch the folder belongs to
   + Choose the branch -> **Checkout**
 
@@ -48,7 +48,7 @@ Commit changes and edit files with Pycharm and synchronise with GitHub.
 - Right click on the file in the pop-up window will allow to **Show
   Diff** `Ctrl+D`, which will show the changes modified. The same window
   shows also alternative to revert changes: **Revert** `Ctrl+Alt+Z`.
-  Here is the [screenshot](../docs/assets/images/image.png).
+  Here is the [screenshot](https://github.com/Nanologisk/Nanologisk.github.io/blob/master/pictures/commit_directory.jpg?raw=true).
 - If everything looks ok, click **Commit** in the **Commit changes**
   pop-up window.
 - In order to synchronise changes, click on the **push** symbol (green
