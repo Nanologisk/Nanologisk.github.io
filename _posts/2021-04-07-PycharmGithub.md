@@ -32,7 +32,7 @@ It is working now.  :ghost:
 
 ### 3. Change branches if necessary
 - Right click the folder that need to change branches
-- **Git | Branches**
+- Choose **Git | Branches**
   + The pop-up window: Git Branches: **Local Branches**: master,
     **Remote Branches**: origin/master, orgin/...
   + Check on the GH-site which branch the folder belongs to
@@ -40,7 +40,7 @@ It is working now.  :ghost:
 
 ###  4. Manage project hosted on GitHub- Configure and synchronise
 - Edit a file (e.g. test.md file)
-- Right click the file, **Git | Commit Directory**
+- Right click the file, and choose **Git | Commit Directory**
 - The pop-up window will show changes (bottom left vs bottom right
   versions), as well as allowing for **commit message** to note which
   changes that have been done.
@@ -52,10 +52,10 @@ It is working now.  :ghost:
   pop-up window.
 - In order to synchronise changes, click on the **push** symbol (green
   arrow in the up-right corner).
-- Right click the file, than click on **Git | Push** `Ctrl+Shift+K`.
+- Right click the file, then click on **Git | Push** `Ctrl+Shift+K`.
   + This will show a new window with **Push commits**, and here we can
-    right click again and double check for **Show diff**. Than click
-    **Push** in the bottom-left corner.
+    right click again and double check for **Show diff**. Finally, click
+    **Push** in the bottom-left corner to push the file to GH.
   + A **Push successful** or **Everything is up to date** window will
     pop up in the bottom right corner to inform the action is done.
 - NB! Always **commit file** before **push**.
