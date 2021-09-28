@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Course
-key: page-courseSAM
+key: page-course
 mode: immersive
 header:
   theme: dark
