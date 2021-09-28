@@ -31,6 +31,10 @@ header:
   - title:      Social Science
     url:        /socialscience.html
     key:        socialscience
+    
+  - title:      Course
+   url:        /course.html
+   key:        course
 
   - titles:
       # @start locale config
