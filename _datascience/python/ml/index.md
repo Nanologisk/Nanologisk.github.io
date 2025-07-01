@@ -6,3 +6,6 @@ sidebar:
   nav: datascience
 ---
 # Machine learning models:
+
+
+[scikit-learn example](/datascience/python/ml/python-scikit.md)
