@@ -1,7 +1,7 @@
 ---
 layout: article
-title: Data Cleaning
-permalink: /datascience/python/datacleaning/
+title: Test 2
+permalink: /datascience/python/datacleaning/test2/
 sidebar:
   nav: datascience
 ---
