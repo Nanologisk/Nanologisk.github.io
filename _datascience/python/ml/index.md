@@ -8,4 +8,4 @@ sidebar:
 # Machine learning models:
 
 
-[scikit-learn example](/datascience/python/ml/python-scikit.md)
+[Scikit-learn exercise](/datascience/python/ml/python-scikit.md)
