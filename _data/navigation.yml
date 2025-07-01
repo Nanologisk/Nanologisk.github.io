@@ -32,9 +32,9 @@ header:
     url:        /socialscience.html
     key:        socialscience
     
-  - title:      Course
-    url:        /course.html
-    key:        course
+  - title:      Notes
+    url:        /notes.html
+    key:        notes
 
   - titles:
       # @start locale config
@@ -68,12 +68,24 @@ header:
 datascience:
   - title:      Python
     children:
+      - title:  Data cleaning
+        url:
+      - title:  Descriptive statistics
+        url:
       - title:  Pandas
         url:    /datascience/pandas
       - title:  Scikit-learn
+        url:    /datascience/scikitlearn
+  - title:      Linux
+    children:
+      - title:  Basics
+        url:    /datascience/pandas
+      - title:  Nvim
         url:    /datascience/scikitlearn
   - title:      R
     children:
       - title:  ggplot
         url:    /datascience/ggplot
+
+   
         
