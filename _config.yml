@@ -237,6 +237,7 @@ defaults:
     values:
       nav_key: notes
     show_date: false
+    
 
 ## => Plugins
 ##############################
