@@ -18,3 +18,13 @@ sidebar:
 
 Text here.
 <!--more-->
+
+# Datascience
+
+Explore topics:
+
+
+- [Python](/datascience/python/)
+- [Linux](/datascience/linux/)
+- [Git](/datascience/git/)
+- [R](/datascience/R)
