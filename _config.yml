@@ -240,14 +240,14 @@ defaults:
   ## socialscience
   - scope:
       layout: article
-      path: "socialscience"
+      path: "_socialscience"
     values:
       nav_key: socialscience
     show_date: false
   ## notes
   - scope:
       layout: article
-      path: "notes"
+      path: "_notes"
     values:
       nav_key: notes
     show_date: false
