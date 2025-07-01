@@ -1,10 +1,10 @@
 ---
 layout: article
-title: GitHub setup
+title: Git Setup Basics
 permalink: /datascience/git/01_newproject
 key: datascience-git
 modify_date: 2025-07-01
-pageview: true
+pageview: false
 sidebar:
     nav: datascience
 ---
