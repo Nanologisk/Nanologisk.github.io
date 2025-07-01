@@ -67,6 +67,7 @@ header:
 
 datascience:
   - title:      Python
+    url:        /datascience/Python/
     children:
       - title:  Data cleaning
         url:
@@ -79,6 +80,7 @@ datascience:
       - title:  Scikit-learn
         url:    /datascience/scikitlearn
   - title:      Linux
+    url:        /datascience/Linux/
     children:
       - title:  Basics
         url:    /datascience/pandas
@@ -92,7 +94,8 @@ datascience:
       - title:  Working Copy
         url:    /datascience/git/02_workingcopy      
   - title:      R
-    children:
+    url:        /datascience/R/
+    children:   
       - title:  ggplot
         url:    /datascience/ggplot
 
