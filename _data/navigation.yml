@@ -79,7 +79,7 @@ datascience:
       - title:  Descriptive statistics
         url:    /datascience/python/descstat/
       - title:  Machine learning  
-        url:    /datascience/ml/
+        url:    /datascience/python/ml/
         children:
           - title: Scikit-learn exercise
             url:   /datascience/python/ml/python-scikit
