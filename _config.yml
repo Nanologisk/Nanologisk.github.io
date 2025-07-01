@@ -206,7 +206,7 @@ collections:
     output: true
   socialscience:
     output: true
-  course:
+  notes:
     output: true
     
 defaults:
@@ -244,12 +244,12 @@ defaults:
     values:
       nav_key: socialscience
     show_date: false
-  ## course
+  ## notes
   - scope:
       layout: article
-      path: "course"
+      path: "notes"
     values:
-      nav_key: course
+      nav_key: notes
     show_date: false
 
 ## => Plugins
