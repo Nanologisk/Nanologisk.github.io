@@ -85,8 +85,7 @@ datascience:
             url:   /datascience/python/ml/python-scikit
       - title:  Pandas
         url:    /datascience/pandas
-      - title:  Scikit-learn
-        url:    /datascience/scikitlearn
+  
   - title:      Linux
     url:        /datascience/linux/
     children:
@@ -94,6 +93,7 @@ datascience:
         url:    /datascience/pandas
       - title:  Nvim
         url:    /datascience/scikitlearn
+  
   - title:      Git
     url:        /datascience/git/
     children:
@@ -101,6 +101,7 @@ datascience:
         url:    /datascience/git/01_newproject
       - title:  Working Copy
         url:    /datascience/git/02_workingcopy      
+  
   - title:      R
     url:        /datascience/R/
     children:   
