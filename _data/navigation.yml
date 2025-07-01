@@ -97,13 +97,13 @@ socialscience:
       - title:  Poverty
         url:    /socialscience/README.md
       - title:  Debt
-        url:    /socialscience/scikitlearn
+        url:    
   - title:      Actual
     children:
       - title:  Somewhere
-        url:    /socialscience/ggplot  
+        url:     
       - title:  China
-        url:    /socialscience/ggplot  
+        url:     
 
 notes:
   - title:      Food
@@ -115,7 +115,7 @@ notes:
   - title:      Music
     children:
       - title:  Sheetmusic
-        url:    /notes/ggplot  
+        url:      
       - title:  Something
-        url:    /notes/ggplot  
+        url:      
         
