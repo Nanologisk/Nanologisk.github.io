@@ -72,6 +72,8 @@ datascience:
         url:
       - title:  Descriptive statistics
         url:
+      - title:  Machine learning  
+        url:    /datascience/scikitlearn
       - title:  Pandas
         url:    /datascience/pandas
       - title:  Scikit-learn
