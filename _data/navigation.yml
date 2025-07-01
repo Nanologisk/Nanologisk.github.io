@@ -85,6 +85,7 @@ datascience:
       - title:  Nvim
         url:    /datascience/scikitlearn
   - title:      git
+    url:        /datascience/git
     children:
       - title:  Git Setup Basics
         url:    /datascience/git/01_newproject
