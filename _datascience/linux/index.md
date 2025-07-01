@@ -1,12 +1,12 @@
 ---
 layout: article
-title: Git
+title: Linux
 permalink: /datascience/linux/
 sidebar:
   nav: datascience
 ---
 
-# Git Topics
+# Linux Topics
 
 - [Git Setup Basics](/datascience/git/01_newproject/)
 - [Working Copy](/datascience/git/02_workingcopy/)
