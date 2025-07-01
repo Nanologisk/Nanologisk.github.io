@@ -1,3 +1,16 @@
+---
+layout: article
+title: Working Copy
+permalink: /git/02_workingcopy.md
+key: datascience-git
+cover: /pictures/golden-bokeh-glitter-deep-blue-ethereal-space_90220-2951.avif
+aside:
+  toc: true
+sidebar:
+  nav: datasicence
+---
+
+
 # Connect repo in Working Copy on Ipad
 
 This is pretty straight forward.
