@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Scikit-learn excercises
-permalink: /datascience/scikitlearn
+permalink: /datascience/python/ml/python-scikit
 key: datascience-scikitlearn
 modify_date: 2021-04-08
 pageview: false
