@@ -9,5 +9,5 @@ sidebar:
 
 # Data clearning topics:
 
-- [Test 1](/datascience/python/datacleaning/test1/)
-- [Test 2](/datascience/python/datacleaning/test2/)
+- [Test 1](/datascience/python/datacleaning/test1)
+- [Test 2](/datascience/python/datacleaning/test2)
