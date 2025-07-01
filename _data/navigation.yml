@@ -77,9 +77,9 @@ datascience:
           - title: Test 2
             url:   /datascience/python/datacleaning/test2
       - title:  Descriptive statistics
-        url:
+        url:    /datascience/python/descstat/
       - title:  Machine learning  
-        url:    /datascience/scikitlearn
+        url:    /datascience/ml/
       - title:  Pandas
         url:    /datascience/pandas
       - title:  Scikit-learn
