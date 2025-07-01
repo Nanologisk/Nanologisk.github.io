@@ -71,7 +71,7 @@ datascience:
     children:  
       - title:  Data cleaning
         url:    /datascience/python/datacleaning/
-        Children:
+        children:
           - title: Test 1
             url:   /datascience/python/datacleaning/test1
           - title: Test 2
