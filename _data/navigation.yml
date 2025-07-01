@@ -80,6 +80,9 @@ datascience:
         url:    /datascience/python/descstat/
       - title:  Machine learning  
         url:    /datascience/ml/
+        children:
+          - title: Scikit-learn exercise
+            url:   /datascience/python/ml/python-scikit
       - title:  Pandas
         url:    /datascience/pandas
       - title:  Scikit-learn
