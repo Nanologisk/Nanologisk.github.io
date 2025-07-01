@@ -1,10 +1,10 @@
 ---
 layout: article
 title: GitHub setup
-permalink: /datascience/git
+permalink: /datascience/git/01_newproject
 key: datascience-git
 modify_date: 2025-07-01
-pageview: false
+pageview: true
 sidebar:
     nav: datascience
 ---
