@@ -87,5 +87,35 @@ datascience:
       - title:  ggplot
         url:    /datascience/ggplot
 
-   
+socialscience:
+  - title:      Inequality
+    children:
+      - title:  Health
+        url:
+      - title:  Economic
+        url:
+      - title:  Poverty
+        url:    /datascience/pandas
+      - title:  Debt
+        url:    /datascience/scikitlearn
+  - title:      Actual
+    children:
+      - title:  Somewhere
+        url:    /datascience/ggplot  
+      - title:  China
+        url:    /datascience/ggplot  
+
+note:
+  - title:      Food
+    children:
+      - title:  Western
+        url:    /datascience/pandas
+      - title:  Eastern
+        url:    /datascience/scikitlearn
+  - title:      Music
+    children:
+      - title:  Sheetmusic
+        url:    /datascience/ggplot  
+      - title:  Something
+        url:    /datascience/ggplot  
         
