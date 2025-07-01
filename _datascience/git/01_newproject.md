@@ -2,9 +2,7 @@
 layout: article
 title: Git Setup Basics
 permalink: /datascience/git/01_newproject
-key: datascience-git
 modify_date: 2025-07-01
-pageview: false
 sidebar:
     nav: datascience
 ---
