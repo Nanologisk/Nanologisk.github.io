@@ -82,6 +82,12 @@ datascience:
         url:    /datascience/pandas
       - title:  Nvim
         url:    /datascience/scikitlearn
+  - title:      git
+    children:
+      - title:  Setup
+        url:    /datascience/git/01_newproject.md
+      - title:  Working Copy
+        url:    /datascience/git/02_workingcopy.md      
   - title:      R
     children:
       - title:  ggplot
