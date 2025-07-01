@@ -95,27 +95,27 @@ socialscience:
       - title:  Economic
         url:
       - title:  Poverty
-        url:    /datascience/pandas
+        url:    /socialscience/README.md
       - title:  Debt
-        url:    /datascience/scikitlearn
+        url:    /socialscience/scikitlearn
   - title:      Actual
     children:
       - title:  Somewhere
-        url:    /datascience/ggplot  
+        url:    /socialscience/ggplot  
       - title:  China
-        url:    /datascience/ggplot  
+        url:    /socialscience/ggplot  
 
-note:
+notes:
   - title:      Food
     children:
       - title:  Western
-        url:    /datascience/pandas
+        url:    /notes/README.md
       - title:  Eastern
-        url:    /datascience/scikitlearn
+        url:    /notes/test.md
   - title:      Music
     children:
       - title:  Sheetmusic
-        url:    /datascience/ggplot  
+        url:    /notes/ggplot  
       - title:  Something
-        url:    /datascience/ggplot  
+        url:    /notes/ggplot  
         
