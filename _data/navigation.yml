@@ -68,9 +68,14 @@ header:
 datascience:
   - title:      Python
     url:        /datascience/python/
-    children:
+    children:  
       - title:  Data cleaning
-        url:
+        url:    /datascience/python/datacleaning/
+        Children:
+          - title: Test 1
+            url:   /datascience/python/datacleaning/test1
+          - title: Test 2
+            url:   /datascience/python/datacleaning/test2
       - title:  Descriptive statistics
         url:
       - title:  Machine learning  
