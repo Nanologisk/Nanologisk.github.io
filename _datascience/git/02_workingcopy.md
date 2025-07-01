@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Working Copy
-permalink: /git/02_workingcopy.md
+permalink: /datascience/git/02_workingcopy.md
 key: datascience-git
 cover: /pictures/golden-bokeh-glitter-deep-blue-ethereal-space_90220-2951.avif
 aside:
