@@ -1,3 +1,19 @@
+---
+layout: article
+title: GitHub setup
+permalink: /datascience/git
+key: datascience-git
+modify_date: 2025-07-01
+pageview: false
+sidebar:
+    nav: datascience
+---
+
+Git set-up for first time. Note for myself!
+
+<!--more-->
+
+
 # Start new project in Git
 
 ## 1. Create a new GitHub repository
