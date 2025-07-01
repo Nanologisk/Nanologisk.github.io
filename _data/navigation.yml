@@ -85,9 +85,9 @@ datascience:
   - title:      git
     children:
       - title:  Git Setup Basics
-        url:    /datascience/git/01_newproject.md
+        url:    /datascience/git/01_newproject
       - title:  Working Copy
-        url:    /datascience/git/02_workingcopy.md      
+        url:    /datascience/git/02_workingcopy      
   - title:      R
     children:
       - title:  ggplot
