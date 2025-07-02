@@ -1,4 +1,5 @@
 ---
+date:  2025-07-01
 layout: article
 title: Scikit-learn excercises
 permalink: /datascience/python/ml/python-scikit
