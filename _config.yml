@@ -212,6 +212,9 @@ defaults:
       show_edit_on_github: false
       show_subscribe: false
       pageview: true
+      
+      
+      
   ## datascience
   - scope:
       path: "_datascience"
@@ -248,6 +251,15 @@ defaults:
       show_date: false
       # lightbox: true
     
+  ## archive page
+  - scope:
+      path: "archive.html"
+    values:
+      layout: archive
+      nav_key: archive
+      sidebar:
+        nav: archive
+
 
 ## => Plugins
 ##############################
