@@ -3,28 +3,22 @@ layout: home
 ---
 
 <div class="home">
-  {% comment %} Combine all collections {% endcomment %}
-  {% assign all_posts = site.datascience | concat: site.socialscience | concat: site.notes %}
+  {% assign all_posts = site.datascience | concat: site.socialscience | concat: site.notes | sort: "date" | reverse %}
   
-  {% comment %} Sort by date (newest first) {% endcomment %}
-  {% assign sorted_posts = all_posts | sort: "date" | reverse %}
-
-  <h1 class="page-heading">Recent Posts</h1>
+  <h1>Recent Posts</h1>
   
-  <ul class="post-list">
-    {% for post in sorted_posts limit:10 %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h2>
-        {% if post.excerpt %}
-          {{ post.excerpt }}
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  <!-- Bullet-free post list using divs -->
+  {% for post in all_posts limit:10 %}
+    <div style="margin-bottom: 2rem;">
+      <small style="display: block; color: #666;">{{ post.date | date: "%b %-d, %Y" }}</small>
+      <h2 style="margin: 0.5rem 0;">
+        <a href="{{ post.url | relative_url }}" style="text-decoration: none;">
+          {{ post.title }}
+        </a>
+      </h2>
+      {% if post.excerpt %}
+        <p style="margin-top: 0.5rem; color: #333;">{{ post.excerpt }}</p>
+      {% endif %}
+    </div>
+  {% endfor %}
 </div>
-
