@@ -190,10 +190,13 @@ exclude:
 collections:
   datascience:
     output: true
+    permalink: /:collection/:path/
   socialscience:
     output: true
+    permalink: /:collection/:path/
   notes:
     output: true
+    permalink: /:collection/:path/
     
 defaults:
   ## posts
