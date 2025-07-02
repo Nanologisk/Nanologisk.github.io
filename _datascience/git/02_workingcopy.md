@@ -1,5 +1,6 @@
 ---
 layout: article
+date: 2025-07-01
 title: Working Copy
 permalink: /datascience/git/02_workingcopy
 modify_date: 2025-07-01

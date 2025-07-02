@@ -1,5 +1,6 @@
 ---
 layout: article
+date:  2025-07-01
 title: Git Setup Basics
 permalink: /datascience/git/01_newproject
 modify_date: 2025-07-01
