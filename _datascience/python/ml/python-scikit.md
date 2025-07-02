@@ -7,6 +7,7 @@ modify_date: 2021-04-08
 pageview: false
 sidebar:
     nav: datascience
+tags: [machine learning, scikit-learn] 
 ---
 
 Python Scikit-learn exercises, from Datacamp by Muller and
