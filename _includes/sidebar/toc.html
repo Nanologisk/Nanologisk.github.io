@@ -1,6 +1,20 @@
 {%- if page.sidebar.nav -%}
   <div class="sidebar-toc">
     {%- assign _sidebar_nav = site.data.navigation[page.sidebar.nav] -%}
+    
+    {# ===== NEW ARCHIVE SECTION ===== #}
+    <div class="sidebar-archive-container">
+      <ul class="toc toc--navigator">
+        <li class="toc-h1">
+          <a href="{{ '/archive' | relative_url }}" class="sidebar-archive-link">
+            <i class="fas fa-archive"></i> Archive
+          </a>
+        </li>
+      </ul>
+    </div>
+    {# ===== END NEW SECTION ===== #}
+
+    {# ===== ORIGINAL NAVIGATION (UNTOUCHED) ===== #}
     {%- if _sidebar_nav -%}
     <ul class="toc toc--navigator">
       {%- for _item in _sidebar_nav -%}
@@ -25,7 +39,25 @@
           {%- endfor -%}
         {%- endif -%}
       {%- endfor -%}
-      </ul>
+    </ul>
     {%- endif -%}
   </div>
 {%- endif -%}
+
+{# ===== NEW CSS ===== #}
+<style>
+  .sidebar-archive-container {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--sidebar-border-color, #eee);
+    padding-bottom: 1rem;
+  }
+  .sidebar-archive-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sidebar-archive-link .fa-archive {
+    font-size: 0.9em;
+    opacity: 0.7;
+  }
+</style>
