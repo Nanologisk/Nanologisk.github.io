@@ -12,25 +12,25 @@ header:
     url:        /notes.html
     key:        notes
 
-  - titles:
-      # @start locale config
-      en      : &EN       Archive
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-      # @end locale config
-    url: /archive.html
-
   #- titles:
       ## @start locale config
-      #en      : &EN       About
+      #en      : &EN       Archive
       #en-GB   : *EN
       #en-US   : *EN
       #en-CA   : *EN
       #en-AU   : *EN
       # @end locale config
-    #url: /about.html
+    #url: /archive.html
+
+  - titles:
+      # @start locale config
+      en      : &EN       About
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
+      # @end locale config
+    url: /about.html
 
 
   - title:      GitHub
