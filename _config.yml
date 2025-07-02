@@ -214,7 +214,6 @@ defaults:
       pageview: true
       
       
-      
   ## datascience
   - scope:
       path: "_datascience"
@@ -229,13 +228,16 @@ defaults:
       show_edit_on_github: false
       show_date: false
       # lightbox: true
+      
+  
   ## socialscience
   - scope:
-      layout: article
       path: "_socialscience"
     values:
+      layout: article
       nav_key: socialscience
-    show_date: false
+      show_date: false
+
   ## notes
   - scope:
       path: "_notes"
