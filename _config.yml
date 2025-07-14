@@ -10,7 +10,7 @@ title   : Nanological site
 description: > # this means to ignore newlines until "Language & timezone"
   Learning something nanologically new
 logo:
-  icon: fa-octopus   # try to change logo
+  icon: fa-brain   # try to change logo
 
 
 ## => Language and Timezone
